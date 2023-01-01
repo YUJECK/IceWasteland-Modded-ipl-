@@ -4,8 +4,12 @@ using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
-    private readonly List<Ore> ore = new();
-    public readonly UnityEvent OreWasAdded = new();
+    private readonly List<IStorable> ore = new();
+    public readonly UnityEvent<IStorable> OnOreWasAdded = new();
 
-    public void AddOre(Ore newOre) => ore.Add(newOre);
+    public void AddOre(IStorable newOre)
+    {
+        ore.Add(newOre);
+        OnOreWasAdded.Invoke(newOre);   
+    }
 }

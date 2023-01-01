@@ -1,14 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu]
-public class GoldOre : Ore
+public class GoldOre : ScriptableObject, IPickable
 {
     [SerializeField] private int money = 30;
 
-    public override void PickUp()
-    {
-        base.PickUp();
+    public UnityEvent OnPickUp { get; private set; }
 
-        GameManager._pointMoney += money;
-    }
+    public void PickUp() { GameManager._pointMoney += money; Debug.Log("asd"); }
 }
