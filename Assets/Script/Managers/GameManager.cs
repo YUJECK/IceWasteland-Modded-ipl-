@@ -246,6 +246,5 @@ public class GameManager : MonoBehaviour
         _moneyText.text = _pointMoney.ToString();
         _twoMoneyText.text = _pointMoney.ToString();
         _treeMoneyText.text = _pointMoney.ToString();
-        Debug.Log("Update");
     }
 }

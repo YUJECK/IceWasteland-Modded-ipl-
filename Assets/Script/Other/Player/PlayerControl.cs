@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -66,7 +65,7 @@ public class PlayerControl : MonoBehaviour
             GetComponent<MoonDeath>()._heartImage = healthHeart[healthHeart.Count - 1];
             healthHeart[healthHeart.Count - 1].GetComponent<Image>().color = heartColor;
         }
-        else if(health <= maxHealth)
+        else if (health <= maxHealth)
         {
             healthHeart.Add(Instantiate(healthPrefab,
             new Vector3(healthHeart[healthHeart.Count - 1].transform.position.x + 1f, healthHeart[healthHeart.Count - 1].transform.position.y,
@@ -113,7 +112,7 @@ public class PlayerControl : MonoBehaviour
         {
             Flip();
         }
-        else if (_movement.x >  0 && !_FacingRight)
+        else if (_movement.x > 0 && !_FacingRight)
         {
             Flip();
         }
@@ -133,7 +132,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
-        _rb.MovePosition(_rb.position +_movement * _speed * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _movement * _speed * Time.fixedDeltaTime);
     }
     void Flip()
     {
