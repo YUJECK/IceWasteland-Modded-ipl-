@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public interface IStorable
 {
-    public Sprite inventoryIcon { get; }
+    public Sprite InventoryIcon { get; }
 
     public UnityEvent OnAddedToInventory { get; }
     public UnityEvent OnInInventory { get; }
