@@ -93,10 +93,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5522847643673186249}
-  - component: {fileID: 5522847643673186248}
   - component: {fileID: 5522847643673186250}
+  - component: {fileID: 6098213253860960359}
   m_Layer: 0
-  m_Name: OreTemplate
+  m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,20 +118,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5522847643673186248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5522847643673186246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 677007d30a58c9c42827cc1df0e3e7b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ore: {fileID: 0}
-  spriteRenderer: {fileID: 5522847643395185030}
 --- !u!61 &5522847643673186250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -158,3 +144,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5401064, y: 1.2162606}
   m_EdgeRadius: 0
+--- !u!114 &6098213253860960359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5522847643673186246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f7949bcff5e040bf2977654fabcbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 30

@@ -1,22 +1,28 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
-namespace Assets.Script.Other
+public static class MoneyManager 
 {
-    public class MoneyManager : MonoBehaviour
+    private static int money;
+    public static readonly UnityEvent<int> OnMoneyChanged = new();
+
+    //mb нужно доработать
+    public static void AddMoney(int addMoney)
     {
-        private int money;
-
-        private void AddMoney(int addMoney)
+        if (addMoney > 0)
+        { 
+            money += addMoney;
+            OnMoneyChanged.Invoke(money);
+        } 
+        else Debug.LogError("Add money < 0");
+    }
+    public static void Pay(int moneyPayment)
+    {
+        if (moneyPayment > 0 && money - moneyPayment >= 0)
         {
-            if(addMoney > 0)
-                money += addMoney;
+            money -= moneyPayment;
+            OnMoneyChanged.Invoke(money);
         }
-        private void TakeAwayMoney(int awayMoney)
-        {
-            if(awayMoney > 0)
-                money -= awayMoney;
-
-        }
+        else if (moneyPayment < 0) Debug.LogError("Payment < 0");
     }
 }

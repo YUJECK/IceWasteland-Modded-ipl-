@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu]
-public class GoldOre : ScriptableObject, IPickable
+public sealed class GoldOre : MonoBehaviour, IPickable
 {
     [SerializeField] private int money = 30;
-
+    [SerializeField] GameObject goldDustParticle;
     public UnityEvent OnPickUp { get; private set; }
 
-    public void PickUp() { GameManager._pointMoney += money; Debug.Log("asd"); }
+    public void PickUp() 
+    {
+        MoneyManager.AddMoney(30);
+        Instantiate(goldDustParticle, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
 }
