@@ -1,18 +1,11 @@
-﻿using AutumnForest.Editor;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine.Events;
 
-public class IronOre : MonoBehaviour, IPickable
+public class IronOre : CollectableResource, IPickable
 {
-    [SerializeField, Interface(typeof(IStorable))] private Object iron;
-
-    public IStorable Iron => iron as IStorable;
-
     public UnityEvent OnPickUp { get; private set; }
 
-
-    public void PickUp() 
+    public void PickUp()
     {
-        
+        FindObjectOfType<Inventory>().AddItem(Resource.Clone());
     }
 }

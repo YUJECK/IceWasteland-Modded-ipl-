@@ -1,29 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
 {
-    [System.Serializable] public class Note
-    {
-        public Text noteText;
-        public string noteName;
-        public Vector2 notePos;
-
-        public Note(Text newText, string name, Vector2 pos)
-        {
-            noteText = newText;
-            noteName = name;
-            notePos = pos;
-
-            noteText.text = "Посылка - " + noteName + ", X: " + notePos.x + ";"
-                + " Y: " + notePos.y + ";";
-        }
-    }
-
     [SerializeField] GameObject _panelPause;
 
 
@@ -88,7 +70,7 @@ public class GameManager : MonoBehaviour
     [Header("Uranys")]
     public Text _uranText;
     public Text _claerUranText;
-    public Text _radiathionText; 
+    public Text _radiathionText;
 
     [Header("Hornys")]
     public Text _hornyText;
@@ -168,7 +150,7 @@ public class GameManager : MonoBehaviour
     {
         //Включение счетчика фпс
         if (Input.GetKeyDown(KeyCode.Tab)) Fps.gameObject.SetActive(!Fps.gameObject.activeSelf);
-        if (Fps.gameObject.activeSelf) 
+        if (Fps.gameObject.activeSelf)
             Fps.text = "Fps: " + ((int)(1f / Time.unscaledDeltaTime)).ToString();
 
         if (_inventor == _limitInventore)
@@ -201,9 +183,9 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.F8)){ SceneManager.LoadScene(1);}
+        if (Input.GetKeyDown(KeyCode.F8)) { SceneManager.LoadScene(1); }
     }
-    
+
     //Метод для кнопок
     public void SetActive(GameObject obj) { obj.SetActive(!obj.activeSelf); }
     public void FlipTimeScale() { if (Time.timeScale == 0f) Time.timeScale = 1f; else if (Time.timeScale == 1f) Time.timeScale = 0f; }
@@ -242,7 +224,7 @@ public class GameManager : MonoBehaviour
         _moonDirtText.text = _moonDirt.ToString();
 
         berryText.text = berryCount.ToString();
-        
+
         _moneyText.text = _pointMoney.ToString();
         _twoMoneyText.text = _pointMoney.ToString();
         _treeMoneyText.text = _pointMoney.ToString();

@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu()]
-public sealed class Iron : ScriptableObject, IStorable, ISellable, IRecyclable
+[CreateAssetMenu]
+class RubyResource : Resource, ICollectable, ISellable
 {
     [SerializeField] private int cost = 6;
     [SerializeField] private Sprite inventoryIcon;
-        
+
     public UnityEvent OnAddedToInventory { get; private set; }
     public UnityEvent OnInInventory { get; private set; }
     public UnityEvent OnRemovedFromInventory { get; private set; }
@@ -15,8 +15,5 @@ public sealed class Iron : ScriptableObject, IStorable, ISellable, IRecyclable
     public Sprite InventoryIcon => inventoryIcon;
     public int Cost => cost;
 
-    public void Recycle()
-    {
-        throw new System.NotImplementedException();
-    }
+    public ICollectable Clone() => Instantiate(this);
 }

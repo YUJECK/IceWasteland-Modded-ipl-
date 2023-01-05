@@ -162,7 +162,7 @@ public class MagazineWorkest : MonoBehaviour
     private IEnumerator WriteNotes(string itemName, Transform objTransform)
     {
         yield return new WaitForSeconds(2f);
-        gameManager.notes.Add(new GameManager.Note(
+        gameManager.notes.Add(new Note(
             Instantiate(gameManager.notes[0].noteText.gameObject,
             new Vector3(gameManager.notes[0].noteText.transform.position.x,
             gameManager.notes[gameManager.notes.Count-1].noteText.transform.position.y - 1f, 0f), Quaternion.identity,
