@@ -45,16 +45,16 @@ public class FoxAI : MonoBehaviour
             }
         }
 
-        if (_isTheef == true && Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) < _distance && LutingPlayer._heKeng == false)
-        {
-            _isDagry = true;
-            transform.position = Vector2.MoveTowards(transform.position, PlayerControl._playerPoint.transform.position, _speed * Time.deltaTime);
-            _FlipWithPlayer();
-        }
-        else if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) > _distance)
-        {   
-            _isDagry = false;
-        }
+        //if (_isTheef == true && Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) < _distance && LutingPlayer._heKeng == false)
+        //{
+        //    _isDagry = true;
+        //    transform.position = Vector2.MoveTowards(transform.position, PlayerControl._playerPoint.transform.position, _speed * Time.deltaTime);
+        //    _FlipWithPlayer();
+        //}
+        //else if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) > _distance)
+        //{   
+        //    _isDagry = false;
+        //}
     }
 
     void OnTriggerEnter2D(Collider2D _coll)
@@ -85,14 +85,14 @@ public class FoxAI : MonoBehaviour
 
     void _FlipWithPlayer()
     {
-        if (PlayerControl._playerPoint.transform.position.x < transform.position.x)
-        {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (PlayerControl._playerPoint.transform.position.x > transform.position.x)
-        {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
+        //if (PlayerControl._playerPoint.transform.position.x < transform.position.x)
+        //{
+        //    transform.localRotation = Quaternion.Euler(0, 0, 0);
+        //}
+        //else if (PlayerControl._playerPoint.transform.position.x > transform.position.x)
+        //{
+        //    transform.localRotation = Quaternion.Euler(0, 180, 0);
+        //}
     }
 
     IEnumerator Theef()

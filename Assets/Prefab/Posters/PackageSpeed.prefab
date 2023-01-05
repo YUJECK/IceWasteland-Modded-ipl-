@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 3111075492428806286}
   - component: {fileID: 3111075492428806285}
   - component: {fileID: 3111075492428806284}
-  - component: {fileID: 3111075492428806387}
+  - component: {fileID: 2864946366493048354}
   m_Layer: 0
-  m_Name: PostSpeed
+  m_Name: PackageSpeed
   m_TagString: Post
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3111075492428806387
+--- !u!114 &2864946366493048354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,20 +175,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3111075492428806386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7f0cbc33a794ff43b103109a43e45eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b8d380c2b8e0eb44b18f59c2c241213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _petHappy: {fileID: 4411248887068275343, guid: 47edd057d90b8f74393a9573045cb87e, type: 3}
-  _petNormal: {fileID: 4411248887068275343, guid: bb901f12651b2d845b5a1a1e83c02562, type: 3}
-  _petSad: {fileID: 4411248887068275343, guid: 89d9cb32947b3c340952b73b5f1899d6, type: 3}
-  _isSpeed: 1
-  _isRadiation: 0
-  _isNormalInventore: 0
-  _isBigInventore: 0
-  _isPet: 0
-  _isGun: 0
-  _isID: 0
-  _isTrecker: 0
 --- !u!1 &3111075492671422155
 GameObject:
   m_ObjectHideFlags: 0

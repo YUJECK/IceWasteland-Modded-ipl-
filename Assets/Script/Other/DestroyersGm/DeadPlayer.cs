@@ -11,19 +11,19 @@ public class DeadPlayer : MonoBehaviour
     [SerializeField] AudioSource _teleportLife;
 
     [SerializeField] GameObject _effectsTep;
-    PlayerControl player;
+    //PlayerControl player;
 
     void Start()
     {
         _isDead = false;
-        player = FindObjectOfType<PlayerControl>();
+        //player = FindObjectOfType<PlayerControl>();
     }
     public void DestroyGun(){Destroy(_gun);}
 
     void OnTriggerEnter2D(Collider2D _coll)
     {
         if (_coll.gameObject.CompareTag("Enemy") && LutingPlayer._heKeng == false && SouthPickUp._isLive == false)
-            player.HealthDown();
+            //player.HealthDown();
 
         if (_coll.gameObject.CompareTag("Enemy") && SouthPickUp._isLive == true)
         {

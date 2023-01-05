@@ -54,10 +54,10 @@ public class HPEnemy : MonoBehaviour
                 Instantiate(_king, gameObject.transform.position, Quaternion.identity);
             }
 
-            if (MagazineWorkest._idSold == true && PostScript._idIsYou == true)
-            {
-                GameManager._pointMoney += _plusMoney;
-            }
+            //if (MagazineWorkest._idSold == true && PostScript._idIsYou == true)
+            //{
+            //    GameManager._pointMoney += _plusMoney;
+            //}
         }
     }
 }

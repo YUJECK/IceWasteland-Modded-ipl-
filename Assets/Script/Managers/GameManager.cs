@@ -98,7 +98,6 @@ public class GameManager : MonoBehaviour
     public Text healthCount;
 
     [SerializeField] private Text Fps;
-    public List<Note> notes;
     public GameObject newIndicator;
 
     void Start()
@@ -111,7 +110,7 @@ public class GameManager : MonoBehaviour
 
         _pointMoney = 20f;
 
-        PlayerControl._speed = 7f;
+        //PlayerControl._speed = 7f;
 
         _horny = 0f;
         _metal = 0f;
@@ -141,7 +140,7 @@ public class GameManager : MonoBehaviour
         MagazineWorkest._idSold = false;
         MagazineWorkest._treckerSold = false;
 
-        PostScript._idIsYou = false;
+        //PostScript._idIsYou = false;
 
         LutingPlayer._heKeng = false;
         UpdateInventory();

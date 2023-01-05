@@ -24,7 +24,7 @@ public class LutingPlayer : MonoBehaviour
     [SerializeField] AudioSource _terrakotaPickSound;
     [SerializeField] AudioSource _seniPick;
     [SerializeField] AudioSource _poop;
-    [SerializeField] AudioSource _thhe;                
+    [SerializeField] AudioSource _thhe;
     //Долой массивы, когда можно  создать дофига строк, а потом путаться в них 
 
     public static bool _isMagazineOpen = false;
@@ -34,7 +34,7 @@ public class LutingPlayer : MonoBehaviour
         FoxAI._theefy = _thhe;
         gameManager = FindObjectOfType<GameManager>();
     }
-    
+
     void OnTriggerEnter2D(Collider2D _coll)
     {
         //Ugly
@@ -56,7 +56,7 @@ public class LutingPlayer : MonoBehaviour
         {
             if (GameManager._inventor < GameManager._limitInventore)
             {
-                GameManager._metal+= 1f;
+                GameManager._metal += 1f;
                 Sfx();
             }
             else if (GameManager._inventor >= GameManager._limitInventore)
@@ -69,19 +69,19 @@ public class LutingPlayer : MonoBehaviour
         if (_coll.gameObject.CompareTag("Gold"))
         {
             GameManager._pointMoney += 30f;
-            _goldSpound.Play();        
+            _goldSpound.Play();
         }
         //Shr
         if (_coll.gameObject.CompareTag("Shr"))
         {
             GameManager._pointMoney += 10f;
-            _seniPick.Play();        
+            _seniPick.Play();
         }
         //Poop
         if (_coll.gameObject.CompareTag("Poop"))
         {
             GameManager._pointMoney -= 15f;
-            _poop.Play();      
+            _poop.Play();
         }
         //Uran
         if (_coll.gameObject.CompareTag("Uran"))
@@ -98,8 +98,8 @@ public class LutingPlayer : MonoBehaviour
                     GameManager._uran += 0f;
                     Sfx();
                 }
-                else if (MagazineWorkest._radiationSold == false)
-                    FindObjectOfType<PlayerControl>().HealthDown();
+                //else if (MagazineWorkest._radiationSold == false)
+                //    FindObjectOfType<PlayerControl>().HealthDown();
             }
         }
         //Horny
@@ -145,7 +145,7 @@ public class LutingPlayer : MonoBehaviour
             }
         }
         //Ягоды
-        if(_coll.CompareTag("Berry"))
+        if (_coll.CompareTag("Berry"))
         {
             GameManager.berrySpawned -= 1;
             if (GameManager._inventor < GameManager._limitInventore)
@@ -225,7 +225,7 @@ public class LutingPlayer : MonoBehaviour
 
     IEnumerator Raporting()
     {
-        yield return new WaitForSeconds (0.1f);
+        yield return new WaitForSeconds(0.1f);
 
         //Uglys
         if (GameManager._pointUgly >= 1f)
@@ -304,11 +304,11 @@ public class LutingPlayer : MonoBehaviour
             GameManager._pointMoney += 3f;
             if (GameManager._pointUgly >= 1f)
             {
-                StartCoroutine ("Solding");
+                StartCoroutine("Solding");
             }
         }
         //Sold Uran
-        if (GameManager._uranClear>= 1f)
+        if (GameManager._uranClear >= 1f)
         {
             GameManager._uranClear -= 1f;
             GameManager._pointMoney += 20f;
@@ -323,7 +323,7 @@ public class LutingPlayer : MonoBehaviour
             GameManager._pointMoney += 13f;
             if (GameManager._uran >= 1f)
             {
-                StartCoroutine ("Solding");
+                StartCoroutine("Solding");
             }
         }
         //Sold Horny
@@ -407,7 +407,7 @@ public class LutingPlayer : MonoBehaviour
             }
         }
         //Продажа ягод была выпилина
-        
+
         if (GameManager._porohPoint <= 0f && GameManager._pointUgly <= 0f && GameManager._uran <= 0f && GameManager._uranClear <= 0f && GameManager._horny <= 0f && GameManager._metal <= 0f && GameManager._clearRubin <= 0f && GameManager._rubin <= 0f && GameManager._cosmo <= 0f && GameManager._terrakota <= 0f && GameManager._moon <= 0f && GameManager._moonDirt <= 0f)
         {
             StopCoroutine("Solding");

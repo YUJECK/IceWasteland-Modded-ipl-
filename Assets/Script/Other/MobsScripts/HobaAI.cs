@@ -15,7 +15,7 @@ public class HobaAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, PlayerControl._playerPoint.transform.position, _speed * Time.deltaTime);
+        //transform.position = Vector2.MoveTowards(transform.position, PlayerControl._playerPoint.transform.position, _speed * Time.deltaTime);
 
         _FlipWithPlayer();
 
@@ -24,26 +24,26 @@ public class HobaAI : MonoBehaviour
             StopCoroutine("_PlusMoney");
         }
 
-        if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) < _distanceOfPlayer)
-        {
-            _speed = 0f;
-        }
-        else if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) > _distanceOfPlayer)
-        {
-            _speed = 6.5f;
-        }
+        //if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) < _distanceOfPlayer)
+        //{
+        //    _speed = 0f;
+        //}
+        //else if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) > _distanceOfPlayer)
+        //{
+        //    _speed = 6.5f;
+        //}
     }
 
     void _FlipWithPlayer()
     {
-        if (PlayerControl._playerPoint.transform.position.x > transform.position.x)
-        {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (PlayerControl._playerPoint.transform.position.x < transform.position.x)
-        {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
+        //if (PlayerControl._playerPoint.transform.position.x > transform.position.x)
+        //{
+        //    transform.localRotation = Quaternion.Euler(0, 0, 0);
+        //}
+        //else if (PlayerControl._playerPoint.transform.position.x < transform.position.x)
+        //{
+        //    transform.localRotation = Quaternion.Euler(0, 180, 0);
+        //}
     }
 
     void Replay()

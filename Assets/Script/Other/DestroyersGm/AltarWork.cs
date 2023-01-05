@@ -18,7 +18,7 @@ public class AltarWork : MonoBehaviour
             Instantiate(_effectAltar, gameObject.transform.position, Quaternion.identity);
             _south.SetActive(false);
             _aktiv.Play();
-            FindObjectOfType<PlayerControl>().HealthUp(Color.cyan, true);
+            //FindObjectOfType<PlayerControl>().HealthUp(Color.cyan, true);
             SouthPickUp._isPick = false;
             Destroy(gameObject);
         }

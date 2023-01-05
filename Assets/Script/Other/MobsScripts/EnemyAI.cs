@@ -39,19 +39,19 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) < _minDistance && LutingPlayer._heKeng == false)
-        {
-            _isAgry = true;
-            if (_isAgry == true)
-            {
-               transform.position = Vector2.MoveTowards(transform.position, PlayerControl._playerPoint.transform.position, _speed * Time.deltaTime);
-               _FlipWithPlayer();
-            }
-        }
-        else if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) > _minDistance)
-        {
-          _isAgry = false;
-        }
+        //if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) < _minDistance && LutingPlayer._heKeng == false)
+        //{
+        //    _isAgry = true;
+        //    if (_isAgry == true)
+        //    {
+        //       transform.position = Vector2.MoveTowards(transform.position, PlayerControl._playerPoint.transform.position, _speed * Time.deltaTime);
+        //       _FlipWithPlayer();
+        //    }
+        //}
+        //else if (Vector2.Distance(transform.position, PlayerControl._playerPoint.transform.position) > _minDistance)
+        //{
+        //  _isAgry = false;
+        //}
 
         if (LutingPlayer._heKeng == true)
         {
@@ -61,14 +61,14 @@ public class EnemyAI : MonoBehaviour
 
     void _FlipWithPlayer()
     {
-        if (PlayerControl._playerPoint.transform.position.x < transform.position.x)
-        {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (PlayerControl._playerPoint.transform.position.x > transform.position.x)
-        {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
+        //if (PlayerControl._playerPoint.transform.position.x < transform.position.x)
+        //{
+        //    transform.localRotation = Quaternion.Euler(0, 0, 0);
+        //}
+        //else if (PlayerControl._playerPoint.transform.position.x > transform.position.x)
+        //{
+        //    transform.localRotation = Quaternion.Euler(0, 180, 0);
+        //}
     }
 
     void _FlipWithPoints()

@@ -8,7 +8,7 @@ public class Jam : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         { 
-            collision.gameObject.GetComponent<PlayerControl>().HealthUp(Color.red, false);
+            //collision.gameObject.GetComponent<PlayerControl>().HealthUp(Color.red, false);
             Destroy(gameObject);
         }
     }
