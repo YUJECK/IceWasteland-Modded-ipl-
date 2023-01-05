@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -26,24 +24,24 @@ public class Gun : MonoBehaviour
                 if (_timeShot <= 0f)
                 {
                     if (Input.GetMouseButtonDown(0))
-                    {  
+                    {
                         Instantiate(_bullet, _shotPos.position, transform.rotation);
                         Instantiate(_effectShot, _shotPos.transform.position, transform.rotation);
-                        _shotSound.pitch = Random.Range(0.7f, 1f); 
+                        _shotSound.pitch = Random.Range(0.7f, 1f);
                         _shotSound.Play();
                         GameManager._metalBullet -= 1f;
-                        _timeShot = _timeStart;    
+                        _timeShot = _timeStart;
                     }
                 }
                 else
                 {
-                    _timeShot -= Time.deltaTime; 
+                    _timeShot -= Time.deltaTime;
                 }
             }
         }
         else
         {
-            _timeShot -= Time.deltaTime; 
+            _timeShot -= Time.deltaTime;
         }
 
         if (DeadPlayer._isDead == true)
@@ -78,5 +76,5 @@ public class Gun : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    
+
 }
