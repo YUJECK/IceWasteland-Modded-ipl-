@@ -22,16 +22,16 @@ public class DeadPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D _coll)
     {
-        if (_coll.gameObject.CompareTag("Enemy") && LutingPlayer._heKeng == false && SouthPickUp._isLive == false)
-            //player.HealthDown();
+        //if (_coll.gameObject.CompareTag("Enemy") && LutingPlayer._heKeng == false && SouthPickUp._isLive == false)
+        //    //player.HealthDown();
 
-        if (_coll.gameObject.CompareTag("Enemy") && SouthPickUp._isLive == true)
-        {
-            transform.position = new Vector2(Random.Range(-110, 110), Random.Range(70, -25)); 
-            Instantiate(_effectsTep, gameObject.transform.position, Quaternion.identity);
-            _teleportLife.Play();
-            _heartImage.SetActive(false);
-            SouthPickUp._isLive = false;
-        }
+        //if (_coll.gameObject.CompareTag("Enemy") && SouthPickUp._isLive == true)
+        //{
+        //    transform.position = new Vector2(Random.Range(-110, 110), Random.Range(70, -25)); 
+        //    Instantiate(_effectsTep, gameObject.transform.position, Quaternion.identity);
+        //    _teleportLife.Play();
+        //    _heartImage.SetActive(false);
+        //    SouthPickUp._isLive = false;
+        //}
     }
 }

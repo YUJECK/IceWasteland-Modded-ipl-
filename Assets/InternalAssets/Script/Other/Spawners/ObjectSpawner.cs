@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
@@ -21,7 +21,7 @@ public class ObjectSpawner : MonoBehaviour
                 Vector2 position = new Vector2(Random.Range(minimum.x, maximum.x), Random.Range(minimum.y, maximum.y));
                 Instantiate(objects[i], position, Quaternion.identity);
             }
-            await Task.Delay(spawnTimer);
+            await UniTask.Delay(spawnTimer);
         }
     }
 }

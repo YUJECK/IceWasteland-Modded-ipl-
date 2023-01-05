@@ -13,14 +13,14 @@ public class AltarWork : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D _coll)
     {
-        if (_coll.gameObject.CompareTag("Player") && SouthPickUp._isPick == true)
-        { 
-            Instantiate(_effectAltar, gameObject.transform.position, Quaternion.identity);
-            _south.SetActive(false);
-            _aktiv.Play();
-            //FindObjectOfType<PlayerControl>().HealthUp(Color.cyan, true);
-            SouthPickUp._isPick = false;
-            Destroy(gameObject);
-        }
+        //if (_coll.gameObject.CompareTag("Player") && SouthPickUp._isPick == true)
+        //{ 
+        //    Instantiate(_effectAltar, gameObject.transform.position, Quaternion.identity);
+        //    _south.SetActive(false);
+        //    _aktiv.Play();
+        //    //FindObjectOfType<PlayerControl>().HealthUp(Color.cyan, true);
+        //    //SouthPickUp._isPick = false;
+        //    Destroy(gameObject);
+        //}
     }
 }
