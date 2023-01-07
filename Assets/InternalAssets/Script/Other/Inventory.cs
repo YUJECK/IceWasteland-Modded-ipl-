@@ -22,7 +22,7 @@ public sealed class Inventory : MonoBehaviour
     }
     public void RemoveItems<T>(int count = int.MaxValue) where T : ICollectable => GetItems<T>(count, true);
     public IRecyclable[] GetRecyclableItems(bool removeItems) => GetItems<IRecyclable>(int.MaxValue, removeItems);
-    public ISellable[] GetSellableOreItems(bool removItems) => GetItems<ISellable>(int.MaxValue, removItems);
+    public ISellable[] GetSellableItems(bool removItems) => GetItems<ISellable>(int.MaxValue, removItems);
 
     private T[] GetItems<T>(int range = int.MaxValue, bool remove = false)
     {

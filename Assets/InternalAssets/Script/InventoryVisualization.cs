@@ -11,10 +11,12 @@ public class InventoryVisualization : MonoBehaviour
     private void OnEnable()
     {
         FindObjectOfType<Inventory>().OnItemWasAdded.AddListener(AddItem);
+        FindObjectOfType<Inventory>().OnItemWasRemoved.AddListener(RemoveItem);
     }
     private void OnDisable()
     {
         FindObjectOfType<Inventory>().OnItemWasAdded.RemoveListener(AddItem);
+        FindObjectOfType<Inventory>().OnItemWasRemoved.RemoveListener(RemoveItem);
     }
 
     private void Update()

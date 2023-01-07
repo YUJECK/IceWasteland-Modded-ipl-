@@ -172,7 +172,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 1
 --- !u!95 &7781498214892531411
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -189,7 +189,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8735412057793996318
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,8 +200,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8735412057793996304}
   - component: {fileID: 5864055243440146486}
+  - component: {fileID: 1504825264225796049}
   m_Layer: 0
-  m_Name: SoldMachine
+  m_Name: SaleMachine
   m_TagString: Sold
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -249,3 +250,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.7204027}
   m_EdgeRadius: 0
+--- !u!114 &1504825264225796049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8735412057793996318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6efc8af0a5cf5ff41ab7ee429bb73b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

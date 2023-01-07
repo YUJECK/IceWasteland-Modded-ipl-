@@ -2,6 +2,6 @@
 
 public interface ISellable
 {
-    public int Cost { get; }
-    public UnityEvent OnSale { get; }
+    int Cost { get; }
+    UnityEvent OnSold { get; }
 }
