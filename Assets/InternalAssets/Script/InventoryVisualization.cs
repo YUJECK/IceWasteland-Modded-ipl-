@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryVisualization : MonoBehaviour
 {
-    private List<InventorySlot> slots = new();
+    [SerializeField] private GameObject inventory;
+    [SerializeField] private List<InventorySlot> slots = new();
     private int lastNotOccupiedSlot = 0;
 
     private void OnEnable()
@@ -15,25 +17,38 @@ public class InventoryVisualization : MonoBehaviour
         FindObjectOfType<Inventory>().OnItemWasAdded.RemoveListener(AddItem);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E)) inventory.SetActive(true);
+        if (Input.GetKeyUp(KeyCode.E)) inventory.SetActive(false);
+    }
+
     private void AddItem(ICollectable newItem)
     {
-        slots[lastNotOccupiedSlot].AddItem(newItem);
+        InventorySlot slot = FindSlotWithTypeFromItem(newItem);
 
-        lastNotOccupiedSlot++;
+        if (slot == null)
+        {
+            slots[lastNotOccupiedSlot].AddItem(newItem);
+            lastNotOccupiedSlot++;
+        }
+        else slot.AddItem(newItem);
     }
     private void RemoveItem(ICollectable removeItem)
     {
-        FindSlotWithItem(removeItem)?.RemoveCurrentItem();
+        FindSlotWithTypeFromItem(removeItem)?.RemoveCurrentItem();
 
         //lastNotOccupiedSlot++;
     }
 
-    private InventorySlot FindSlotWithItem(ICollectable item)
+    private InventorySlot FindSlotWithTypeFromItem(ICollectable item)
     {
         for (int i = 0; i < slots.Count; i++)
         {
-            if (slots[i] == null) break;
-            if (slots[i].CurrentItem == item) return slots[i];
+            if (slots[i].CurrentItem == null)
+                break;
+            if (slots[i].CurrentItem.GetType() == item.GetType())
+                return slots[i];
         }
         return null;
     }

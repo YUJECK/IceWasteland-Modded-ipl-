@@ -13,7 +13,9 @@ public sealed class IronResource : Resource, ICollectable, ISellable, IRecyclabl
     public UnityEvent OnSale { get; private set; }
 
     public Sprite InventoryIcon => inventoryIcon;
+    public string ItemName => "Железо";
     public int Cost => cost;
+
 
     public ICollectable Clone() => Instantiate(this);
 

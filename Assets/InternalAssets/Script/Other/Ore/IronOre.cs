@@ -7,5 +7,6 @@ public class IronOre : CollectableResource, IPickable
     public void PickUp()
     {
         FindObjectOfType<Inventory>().AddItem(Resource.Clone());
+        Destroy(gameObject); 
     }
 }

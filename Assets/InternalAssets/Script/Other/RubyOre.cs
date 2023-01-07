@@ -9,6 +9,7 @@ namespace Assets.Script.Other
         public void PickUp()
         {
             FindObjectOfType<Inventory>().AddItem(Resource.Clone());
+            Destroy(gameObject);
         }
     }
 }

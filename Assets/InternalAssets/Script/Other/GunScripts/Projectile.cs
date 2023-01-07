@@ -21,6 +21,7 @@ public abstract class Projectile : MonoBehaviour
     {
         OnReach(collision);
         OnReached.Invoke(collision);
+        Destroy(gameObject);
     }
 
     public virtual void Run(float speed)

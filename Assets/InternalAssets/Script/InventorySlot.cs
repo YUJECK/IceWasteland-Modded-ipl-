@@ -5,8 +5,8 @@ public sealed class InventorySlot : MonoBehaviour
 {
     public ICollectable CurrentItem { get; private set; }
     private int itemsCount = 0; 
-    private Image itemIcon;
-    private Text itemsCountText;
+    [SerializeField] private Image itemIcon;
+    [SerializeField] private Text itemsCountText;
 
     public void AddItem(ICollectable newItem)
     {
@@ -23,8 +23,8 @@ public sealed class InventorySlot : MonoBehaviour
         CurrentItem = null;
 
         itemsCount = 0;
-        itemsCountText.gameObject.SetActive(false);
         itemIcon.gameObject.SetActive(false);
+        itemsCountText.gameObject.SetActive(false);
     }
 
     private void InitItem(ICollectable newItem)

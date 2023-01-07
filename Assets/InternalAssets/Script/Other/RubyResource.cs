@@ -13,7 +13,9 @@ class RubyResource : Resource, ICollectable, ISellable
     public UnityEvent OnSale { get; private set; }
 
     public Sprite InventoryIcon => inventoryIcon;
+    public string ItemName => "Рубин";
     public int Cost => cost;
+
 
     public ICollectable Clone() => Instantiate(this);
 }
