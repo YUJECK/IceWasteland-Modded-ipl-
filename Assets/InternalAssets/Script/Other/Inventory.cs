@@ -1,18 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public sealed class Inventory : MonoBehaviour
 {
     private readonly List<ICollectable> items = new();
 
-    public readonly UnityEvent<ICollectable> OnItemWasAdded = new();
-    public readonly UnityEvent<ICollectable> OnItemWasRemoved = new();
+    public event Action<ICollectable> OnItemWasAdded;
+    public event Action<ICollectable> OnItemWasRemoved;
 
     private void Update()
     {
         for (int i = 0; i < items.Count; i++)
-            items[i].OnInInventory.Invoke();
+            items[i].OnInInventory?.Invoke();
     }
 
     public void AddItem(ICollectable newItem)
@@ -37,7 +37,7 @@ public sealed class Inventory : MonoBehaviour
                 if (remove)
                 {
                     this.items.RemoveAt(i);
-                    OnItemWasRemoved.Invoke(this.items[i]);
+                    OnItemWasRemoved?.Invoke(this.items[i]);
                 }
             }
         }
