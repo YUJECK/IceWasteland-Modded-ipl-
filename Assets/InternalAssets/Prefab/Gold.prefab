@@ -157,4 +157,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 30
-  goldDustParticle: {fileID: 0}
+  goldDustParticle: {fileID: 524017635059273377, guid: 5e3357ced76af1d48bab492d50117703, type: 3}

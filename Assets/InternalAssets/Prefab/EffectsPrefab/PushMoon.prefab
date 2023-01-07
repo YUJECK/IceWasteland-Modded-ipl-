@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7350681851926746458}
   - component: {fileID: 3960644989952308333}
   m_Layer: 0
-  m_Name: PuchAltar
+  m_Name: PushMoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.5
-      minScalar: 0.7
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1365,8 +1365,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.7688679, b: 0.9479592, a: 1}
-        key1: {r: 0.3621246, g: 0.2688679, b: 1, a: 1}
+        key0: {r: 0.7971698, g: 1, b: 0.978651, a: 1}
+        key1: {r: 0.31898585, g: 0.2216981, b: 1, a: 1}
         key2: {r: 0.31898585, g: 0.2216981, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
