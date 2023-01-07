@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 [CreateAssetMenu]
-class RubyResource : Resource, ICollectable, ISellable
+class RubyResource : Resource, ICollectable, ISellable, IRecyclable
 {
     [SerializeField] private int cost = 6;
     [SerializeField] private Sprite inventoryIcon;
@@ -18,4 +18,13 @@ class RubyResource : Resource, ICollectable, ISellable
 
 
     public ICollectable Clone() => Instantiate(this);
+
+    public void Recycle()
+    {
+        Debug.Log("Ruby has been recycled");
+
+        //adding to inventory pure version of ruby
+
+        Destroy(this);
+    }
 }
