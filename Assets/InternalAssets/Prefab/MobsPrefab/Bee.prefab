@@ -172,7 +172,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &2968275932785473834
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -189,7 +189,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &9202350916076470406
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,10 +201,10 @@ GameObject:
   - component: {fileID: 9202350916076470402}
   - component: {fileID: 9202350916076470405}
   - component: {fileID: 9202350916076470404}
-  - component: {fileID: -347838620367169706}
   - component: {fileID: 9202350916076470407}
+  - component: {fileID: 342981774931684395}
   - component: {fileID: -8432275049293599039}
-  - component: {fileID: 169769433179105017}
+  - component: {fileID: 7668034170330730461}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Enemy
@@ -275,19 +275,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-347838620367169706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9202350916076470406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2f0fb28c6e31043987bfa1b8ad7a74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _deadTime: 120
 --- !u!114 &9202350916076470407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,10 +287,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c34669614e43244918234d11dc6638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 6
-  _startWaitTime: 0
-  _minDistance: 0
-  _isBee: 1
+  moveSpeed: 5
+--- !u!114 &342981774931684395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9202350916076470406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79438e414697184f9a8eb1cce946f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-8432275049293599039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,25 +320,20 @@ MonoBehaviour:
   _flex: {fileID: 3759431133327206780, guid: 45c8881b01bde1449b5f685657feebe7, type: 3}
   _effectEnemy: {fileID: 524017635059273377, guid: ef3ac07b40c23dc4f98e7c16816f4fa5, type: 3}
   _blood: {fileID: 3959829667790399206, guid: 24fb4482cb528a442b11cf465f1b186a, type: 3}
-  _isBee: 1
-  _isUlitka: 0
-  _isSheep: 0
-  _isBuka: 0
-  _isCat: 0
-  _isMohan: 0
   _isActivator: 0
---- !u!114 &169769433179105017
-MonoBehaviour:
+--- !u!58 &7668034170330730461
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9202350916076470406}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c0a0a0c3198194aae94283f917fe24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stratTime: 8
-  _spawnPoint: {fileID: 9202350916076470402}
-  _spawnObject: {fileID: 1826161091631539516, guid: 43e53e37048370e4ea6e141e4da40c61, type: 3}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.545319
