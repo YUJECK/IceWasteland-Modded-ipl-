@@ -20,10 +20,6 @@ class RubyResource : Resource, ICollectable, ISellable, IRecyclable
 
     public void Recycle()
     {
-        Debug.Log("Ruby has been recycled");
-
-        //adding to inventory pure version of ruby
-
-        Destroy(this);
+        FindObjectOfType<Inventory>().RemoveItems<RubyResource>(1);
     }
 }

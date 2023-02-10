@@ -10,8 +10,16 @@ namespace AutumnForest.Player
         private void Awake()
         {
             playerMove = GetComponent<PlayerMovable>();
-            playerMove.OnMoved.AddListener(Flip);
         }
+        private void OnEnable()
+        {
+            playerMove.OnMoved += Flip;
+        }
+        private void OnDisable()
+        {
+            playerMove.OnMoved -= Flip;
+        }
+
         private void Flip(Vector2 movement)
         {
             if (movement.x < 0 && transform.localScale.x == -1) transform.localScale = new Vector3(1, 1, 1);

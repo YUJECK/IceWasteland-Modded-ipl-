@@ -20,7 +20,10 @@ public sealed class Inventory : MonoBehaviour
         items.Add(newItem);
         OnItemWasAdded.Invoke(newItem);
     }
-    public void RemoveItems<T>(int count = int.MaxValue) where T : ICollectable => GetItems<T>(count, true);
+    public void RemoveItems<T>(int count = int.MaxValue) where T : ICollectable
+    {
+        GetItems<T>(count, true);
+    }
     public IRecyclable[] GetRecyclableItems(bool removeItems) => GetItems<IRecyclable>(int.MaxValue, removeItems);
     public ISellable[] GetSellableItems(bool removItems) => GetItems<ISellable>(int.MaxValue, removItems);
 
@@ -37,7 +40,7 @@ public sealed class Inventory : MonoBehaviour
                 if (remove)
                 {
                     this.items.RemoveAt(i);
-                    OnItemWasRemoved?.Invoke(this.items[i]);
+                    OnItemWasRemoved?.Invoke(nextOre as ICollectable);
                 }
             }
         }

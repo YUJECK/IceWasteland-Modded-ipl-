@@ -1,13 +1,13 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovable : MonoBehaviour
 {
     private Vector2 movement;
     new private Rigidbody2D rigidbody2D;
-    public readonly UnityEvent<Vector2> OnMoved = new();
-    public readonly UnityEvent OnMoveReleased = new();
+    public event Action<Vector2> OnMoved;
+    public event Action OnMoveReleased;
 
     [field: SerializeField] public float MoveSpeed { get; set; } = 5f;
     public bool IsStopped { get; set; } = false;
@@ -24,14 +24,14 @@ public class PlayerMovable : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(!IsStopped)
+        if (!IsStopped)
         {
             rigidbody2D.velocity = movement * MoveSpeed;
-            
-            if(movement != Vector2.zero)
+
+            if (movement != Vector2.zero)
                 OnMoved.Invoke(movement);
         }
-        if(IsStopped || movement == Vector2.zero)
+        if (IsStopped || movement == Vector2.zero)
             OnMoveReleased.Invoke();
     }
 }

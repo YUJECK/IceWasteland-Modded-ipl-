@@ -20,8 +20,6 @@ public sealed class IronResource : Resource, ICollectable, ISellable, IRecyclabl
 
     public void Recycle()
     {
-        Debug.Log("iron has been recycled");
-
-        Destroy(this);
+        FindObjectOfType<Inventory>().RemoveItems<IronResource>(1);
     }
 }
