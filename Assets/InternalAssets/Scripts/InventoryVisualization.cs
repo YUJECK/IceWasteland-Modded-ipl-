@@ -35,23 +35,46 @@ public class InventoryVisualization : MonoBehaviour
             lastNotOccupiedSlot++;
         }
         else slot.AddItem(newItem);
+
+        ComposeItems();
     }
     private void RemoveItem(ICollectable removeItem)
     {
         FindSlotWithTypeFromItem(removeItem)?.RemoveCurrentItem();
-
-        //lastNotOccupiedSlot++;
+        ComposeItems();
     }
-
-    private InventorySlot FindSlotWithTypeFromItem(ICollectable item)
+    private void ComposeItems()
     {
+        bool hasEmptySlot = false;
+
         for (int i = 0; i < slots.Count; i++)
         {
             if (slots[i].CurrentItem == null)
-                break;
-            if (slots[i].CurrentItem.GetType() == item.GetType())
-                return slots[i];
+                hasEmptySlot = true;
+
+            else if (hasEmptySlot)
+            {
+                slots[i - 1].AddItem(slots[i].CurrentItem);
+                slots[i].RemoveCurrentItem();
+            }
         }
+    }
+
+
+    private InventorySlot FindSlotWithTypeFromItem(ICollectable item)
+    {
+        if (item != null)
+        {
+            for (int i = 0; i < slots.Count; i++)
+            {
+                if (slots[i].CurrentItem == null)
+                    break;
+                if (slots[i].CurrentItem.GetType() == item.GetType())
+                    return slots[i];
+            }
+        }
+        else throw new NullReferenceException(nameof(item));
+
         return null;
     }
 }
