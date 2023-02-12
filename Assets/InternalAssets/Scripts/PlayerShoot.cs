@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+namespace IceWasteland.Player
 {
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private Transform firePoint;
-
-    private void Update()
+    public class PlayerShoot : MonoBehaviour
     {
-        if(Input.GetMouseButtonDown(0))
-            Shoot();
-    }
+        [SerializeField] private GameObject bullet;
+        [SerializeField] private Transform firePoint;
 
-    private void Shoot() => Instantiate(bullet, firePoint.position, firePoint.rotation);
+        private void Update()
+        {
+            if(Input.GetMouseButtonDown(0))
+                Shoot();
+        }
+
+        private void Shoot() => Instantiate(bullet, firePoint.position, firePoint.rotation);
+    }
 }

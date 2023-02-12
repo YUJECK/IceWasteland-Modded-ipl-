@@ -1,37 +1,43 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovable : MonoBehaviour
+namespace IceWasteland.Player
 {
-    private Vector2 movement;
-    new private Rigidbody2D rigidbody2D;
-    public event Action<Vector2> OnMoved;
-    public event Action OnMoveReleased;
-
-    [field: SerializeField] public float MoveSpeed { get; set; } = 5f;
-    public bool IsStopped { get; set; } = false;
-
-    private void Awake()
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class PlayerMovable : MonoBehaviour, IMovable
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-    }
+        private Vector2 movement;
+        new private Rigidbody2D rigidbody2D;
+    
+        public event Action<Vector2> OnMoved;
+        public event Action OnMoveReleased;
 
-    private void Update()
-    {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-    }
-    private void FixedUpdate()
-    {
-        if (!IsStopped)
+        [field: SerializeField] public float MoveSpeed { get; set; } = 5f;
+        public bool IsStopped { get; set; } = false;
+
+        private void Awake()
         {
-            rigidbody2D.velocity = movement * MoveSpeed;
-
-            if (movement != Vector2.zero)
-                OnMoved.Invoke(movement);
+            rigidbody2D = GetComponent<Rigidbody2D>();
         }
-        if (IsStopped || movement == Vector2.zero)
-            OnMoveReleased.Invoke();
+
+        private void Update()
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
+        private void FixedUpdate() => Move();
+
+        public void Move()
+        {
+            if (!IsStopped)
+            {
+                rigidbody2D.velocity = movement * MoveSpeed;
+
+                if (movement != Vector2.zero)
+                    OnMoved?.Invoke(movement);
+            }
+            if (IsStopped || movement == Vector2.zero)
+                OnMoveReleased?.Invoke();
+        }
     }
 }

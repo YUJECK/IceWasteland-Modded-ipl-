@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using IceWasteland.Player;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class PackageSpeed : MonoBehaviour, IPickable

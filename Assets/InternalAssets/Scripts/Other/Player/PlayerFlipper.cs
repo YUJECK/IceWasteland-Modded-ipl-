@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AutumnForest.Player
+namespace IceWasteland.Player
 {
     [RequireComponent(typeof(PlayerMovable))]
     public sealed class PlayerFlipper : MonoBehaviour
