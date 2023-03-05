@@ -1,4 +1,6 @@
+using IceWasteland.Services;
 using UnityEngine;
+using Zenject;
 
 namespace IceWasteland.Player
 {
@@ -7,9 +9,17 @@ namespace IceWasteland.Player
         [SerializeField] private GameObject bullet;
         [SerializeField] private Transform firePoint;
 
+        private IInputService inputService;
+
+        [Inject]
+        private void Construct(IInputService inputService)
+        {
+            this.inputService = inputService;
+        }
+
         private void Update()
         {
-            if(Input.GetMouseButtonDown(0))
+            if(inputService.IsShootKeyDown())
                 Shoot();
         }
 

@@ -1,13 +1,15 @@
+using IceWasteland.Services;
 using System;
 using UnityEngine;
+using Zenject;
 
 namespace IceWasteland.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMovable : MonoBehaviour, IMovable
     {
-        private Vector2 movement;
         new private Rigidbody2D rigidbody2D;
+        private IInputService inputService;
     
         public event Action<Vector2> OnMoved;
         public event Action OnMoveReleased;
@@ -15,28 +17,25 @@ namespace IceWasteland.Player
         [field: SerializeField] public float MoveSpeed { get; set; } = 5f;
         public bool IsStopped { get; set; } = false;
 
-        private void Awake()
+        [Inject]
+        private void Construct(IInputService inputService)
         {
-            rigidbody2D = GetComponent<Rigidbody2D>();
+            this.inputService = inputService;
         }
 
-        private void Update()
-        {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
-        }
+        private void Awake() => rigidbody2D = GetComponent<Rigidbody2D>();
         private void FixedUpdate() => Move();
 
         public void Move()
         {
             if (!IsStopped)
             {
-                rigidbody2D.velocity = movement * MoveSpeed;
+                rigidbody2D.velocity = inputService.GetMovement() * MoveSpeed;
 
-                if (movement != Vector2.zero)
-                    OnMoved?.Invoke(movement);
+                if (inputService.GetMovement() != Vector2.zero)
+                    OnMoved?.Invoke(inputService.GetMovement());
             }
-            if (IsStopped || movement == Vector2.zero)
+            if (IsStopped || inputService.GetMovement() == Vector2.zero)
                 OnMoveReleased?.Invoke();
         }
     }

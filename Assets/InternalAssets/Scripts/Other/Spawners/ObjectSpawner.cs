@@ -17,7 +17,7 @@ public class ObjectSpawner : MonoBehaviour
         {
             for (int i = 0; i < objects.Length; i++)
             {
-                Vector2 position = GlobalServiceLocator.GetService<SpawnPlace>().GetPosition();
+                Vector2 position = Vector2.zero;
                 Instantiate(objects[i], position, Quaternion.identity, container);
             }
             await UniTask.Delay(TimeSpan.FromSeconds(spawnTimer));

@@ -147,11 +147,6 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        //¬ключение счетчика фпс
-        if (Input.GetKeyDown(KeyCode.Tab)) Fps.gameObject.SetActive(!Fps.gameObject.activeSelf);
-        if (Fps.gameObject.activeSelf)
-            Fps.text = "Fps: " + ((int)(1f / Time.unscaledDeltaTime)).ToString();
-
         if (_inventor == _limitInventore)
             _inventor = _limitInventore;
 
