@@ -1,16 +1,17 @@
-using IceWasteland.Player;
+using Assets.InternalAssets.Scripts.Other.Player;
+using IceWasteland;
 using UnityEngine;
 using Zenject;
 
 public sealed class LocationInstaller : MonoInstaller
 {
-    [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform startPoint;
 
     public override void InstallBindings()
     {
         BindInputService();
         BindPlayer();
+        BindHUD();
     }
 
     private void BindInputService()
@@ -20,7 +21,15 @@ public sealed class LocationInstaller : MonoInstaller
 
     private void BindPlayer()
     {
+        Object playerPrefab = Resources.Load(AssetsPath.Player);
+
         GameObject player = Container.InstantiatePrefab(playerPrefab, startPoint.position, Quaternion.identity, null);
-        Container.Bind<PlayerMovable>().FromInstance(player.GetComponent<PlayerMovable>()).AsSingle().NonLazy();
+        Container.Bind<PlayerProvider>().FromInstance(player.GetComponent<PlayerProvider>()).AsSingle().NonLazy();
+    }
+
+    private void BindHUD()
+    {
+        Object hudPrefab = Resources.Load(AssetsPath.HUD);
+        GameObject hud = Container.InstantiatePrefab(hudPrefab, startPoint.position, Quaternion.identity, null);
     }
 }
