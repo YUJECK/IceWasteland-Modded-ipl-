@@ -1,5 +1,7 @@
 ﻿using IceWasteland.Helpers;
+using IceWasteland.Player;
 using UnityEngine;
+using Zenject;
 
 namespace IceWasteland.Machines
 {

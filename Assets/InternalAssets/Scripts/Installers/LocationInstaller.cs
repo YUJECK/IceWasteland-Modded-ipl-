@@ -1,5 +1,5 @@
-using Assets.InternalAssets.Scripts.Other.Player;
 using IceWasteland;
+using IceWasteland.Player;
 using UnityEngine;
 using Zenject;
 
@@ -21,15 +21,20 @@ public sealed class LocationInstaller : MonoInstaller
 
     private void BindPlayer()
     {
-        Object playerPrefab = Resources.Load(AssetsPath.Player);
+        Object playerPrefab = Resources.Load(AssetsPath.PLAYER);
 
-        GameObject player = Container.InstantiatePrefab(playerPrefab, startPoint.position, Quaternion.identity, null);
-        Container.Bind<PlayerProvider>().FromInstance(player.GetComponent<PlayerProvider>()).AsSingle().NonLazy();
+        PlayerProvider player = Container
+            .InstantiatePrefabForComponent<PlayerProvider>(playerPrefab, startPoint.position, Quaternion.identity, null);
+
+        Container
+            .Bind<PlayerProvider>()
+            .FromInstance(player)
+            .AsSingle();
     }
 
     private void BindHUD()
     {
         Object hudPrefab = Resources.Load(AssetsPath.HUD);
-        GameObject hud = Container.InstantiatePrefab(hudPrefab, startPoint.position, Quaternion.identity, null);
+        Container.InstantiatePrefab(hudPrefab, startPoint.position, Quaternion.identity, null);
     }
 }

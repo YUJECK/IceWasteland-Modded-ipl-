@@ -1,13 +1,12 @@
-﻿using IceWasteland.Player;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.InternalAssets.Scripts.Other.Player
+namespace IceWasteland.Player
 {
     [RequireComponent(typeof(PlayerMovable))]
     public sealed class PlayerProvider : MonoBehaviour
     {
         public PlayerMovable PlayerMovable { get; private set; }
-    
+
         private void Awake()
         {
             PlayerMovable = GetComponent<PlayerMovable>();

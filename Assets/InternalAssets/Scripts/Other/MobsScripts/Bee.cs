@@ -11,16 +11,13 @@ public class Bee : MonoBehaviour
     private Transform target;
 
     [Inject]
-    private void Construct(PlayerMovable playerMovable)
+    private void Construct(PlayerProvider playerProvider)
     {
-        target = playerMovable.transform;
+        target = playerProvider.transform;
     }
 
     private void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
     }
-
-
-    public sealed class BeeFactory : PlaceholderFactory<Bee> { }
 }
