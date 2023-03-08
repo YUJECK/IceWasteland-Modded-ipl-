@@ -11,9 +11,9 @@ public class Bee : MonoBehaviour
     private Transform target;
 
     [Inject]
-    private void Construct(PlayerProvider playerProvider)
+    private void Construct(Target target)
     {
-        target = playerProvider.transform;
+        this.target = target.transform;
     }
 
     private void FixedUpdate()

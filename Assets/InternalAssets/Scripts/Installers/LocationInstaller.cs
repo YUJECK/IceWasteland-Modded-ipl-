@@ -1,4 +1,5 @@
 using IceWasteland;
+using IceWasteland.AICore;
 using IceWasteland.Player;
 using UnityEngine;
 using Zenject;
@@ -29,6 +30,10 @@ public sealed class LocationInstaller : MonoInstaller
         Container
             .Bind<PlayerProvider>()
             .FromInstance(player)
+            .AsSingle();
+        Container
+            .Bind<Target>()
+            .FromInstance(player.Target)
             .AsSingle();
     }
 
