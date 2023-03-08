@@ -1,23 +1,41 @@
 using IceWasteland.AICore;
-using IceWasteland.Player;
 using UnityEngine;
 using Zenject;
 
-[RequireComponent(typeof(TargetTrigger))]
+[RequireComponent(typeof(TargetLocator))]
 public class Bee : MonoBehaviour
 {
-    private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
 
-    private Transform target;
+    private PointTarget[] targetPoints;
+    private int randomPoint;
 
+    private TargetLocator targetLocator;
+
+    private PlayerTarget target => targetLocator.CurrentTarget;
+    
     [Inject]
-    private void Construct(Target target)
+    public void Construct(PointTarget[] targetPoints)
     {
-        this.target = target.transform;
+        this.targetPoints = targetPoints;
+        RandomizePoint();
     }
+
+    private void Start()
+        => targetLocator = GetComponent<TargetLocator>();
 
     private void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        if (target != null)
+            Move(target.transform);
+        else if (targetPoints[randomPoint] != null && targetPoints[randomPoint].transform.position != transform.position)
+            Move(targetPoints[randomPoint].transform);
+        else
+            RandomizePoint();
     }
+
+    private void Move(Transform target)
+       => transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+    private void RandomizePoint()
+        => randomPoint = Random.Range(0, targetPoints.Length);
 }

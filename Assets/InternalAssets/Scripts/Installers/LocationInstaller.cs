@@ -13,6 +13,17 @@ public sealed class LocationInstaller : MonoInstaller
         BindInputService();
         BindPlayer();
         BindHUD();
+        BindPointTargets();
+    }
+
+    private void BindPointTargets()
+    {
+        PointTarget[] pointTargets = FindObjectsOfType<PointTarget>();
+
+        Container
+            .Bind<PointTarget[]>()
+            .FromInstance(pointTargets)
+            .AsSingle();
     }
 
     private void BindInputService()
@@ -32,7 +43,7 @@ public sealed class LocationInstaller : MonoInstaller
             .FromInstance(player)
             .AsSingle();
         Container
-            .Bind<Target>()
+            .Bind<PlayerTarget>()
             .FromInstance(player.Target)
             .AsSingle();
     }

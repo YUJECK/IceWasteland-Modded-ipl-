@@ -3,16 +3,16 @@ using UnityEngine;
 
 namespace IceWasteland.AICore
 {
-    public sealed class TargetTrigger : MonoBehaviour
+    public sealed class TargetLocator : MonoBehaviour
     {
-        public event Action<Target> OnTargetFound;
-        public event Action<Target> OnTargetMissed;
+        public event Action<PlayerTarget> OnTargetFound;
+        public event Action<PlayerTarget> OnTargetMissed;
 
-        public Target CurrentTarget { get; private set; }
+        public PlayerTarget CurrentTarget { get; private set; }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out Target target))
+            if (collision.TryGetComponent(out PlayerTarget target))
             {
                 CurrentTarget = target;
                 OnTargetFound?.Invoke(target);
