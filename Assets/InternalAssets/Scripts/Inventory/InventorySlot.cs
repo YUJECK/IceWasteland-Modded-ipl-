@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public sealed class InventorySlot : MonoBehaviour
 {
-    public ICollectable CurrentItem { get; private set; }
+    public IStorable CurrentItem { get; private set; }
     private int itemsCount = 0; 
     [SerializeField] private Image itemIcon;
     [SerializeField] private Text itemsCountText;
 
-    public void AddItem(ICollectable newItem)
+    public void AddItem(IStorable newItem)
     {
         if (CurrentItem == null)
             InitItem(newItem);
@@ -27,17 +27,17 @@ public sealed class InventorySlot : MonoBehaviour
         itemsCountText.gameObject.SetActive(false);
     }
 
-    private void InitItem(ICollectable newItem)
+    private void InitItem(IStorable newItem)
     {
         if (CurrentItem == null)
         {
             CurrentItem = newItem;
-            itemIcon.sprite = newItem.InventoryIcon;
+            itemIcon.sprite = newItem.Icon;
             itemsCount = 1;
         }
         else
-            Debug.LogError($"Cant add new item {newItem.ItemName}. Slot is alreadt occupied");
+            Debug.LogError($"Cant add new item {newItem.Name}. Slot is alreadt occupied");
     }
 
-    public override string ToString() => CurrentItem.ItemName;
+    public override string ToString() => CurrentItem.Name;
 }

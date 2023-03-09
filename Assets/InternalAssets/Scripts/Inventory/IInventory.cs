@@ -2,11 +2,11 @@
 
 public interface IInventory
 {
-    event Action<ICollectable> OnItemWasAdded;
-    event Action<ICollectable> OnItemWasRemoved;
+    event Action<IStorable> OnItemWasAdded;
+    event Action<IStorable> OnItemWasRemoved;
 
-    void AddItem(ICollectable newItem);
+    void AddItem(IStorable newItem);
     IRecyclable[] GetRecyclableItems(bool removeItems);
     ISellable[] GetSellableItems(bool removItems);
-    void RemoveItems<T>(int count = int.MaxValue) where T : ICollectable;
+    void RemoveItems<T>(int count = int.MaxValue) where T : IStorable;
 }

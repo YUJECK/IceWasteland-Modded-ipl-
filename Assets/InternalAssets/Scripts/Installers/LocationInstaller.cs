@@ -11,9 +11,18 @@ public sealed class LocationInstaller : MonoInstaller
     public override void InstallBindings()
     {
         BindInputService();
+        
+        Container
+            .Bind<IInventory>()
+            .To<Inventory>()
+            .FromInstance(new Inventory())
+            .AsSingle()
+            .NonLazy();
+
         BindPlayer();
         BindHUD();
         BindPointTargets();
+
     }
 
     private void BindPointTargets()

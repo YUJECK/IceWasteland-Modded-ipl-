@@ -1,26 +1,27 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public sealed class Inventory : MonoBehaviour, IInventory
+public sealed class Inventory : MonoBehaviour, IInventory, ITickable
 {
-    private readonly List<ICollectable> items = new();
+    private readonly List<IStorable> items = new();
 
-    public event Action<ICollectable> OnItemWasAdded;
-    public event Action<ICollectable> OnItemWasRemoved;
+    public event Action<IStorable> OnItemWasAdded;
+    public event Action<IStorable> OnItemWasRemoved;
 
-    private void Update()
+    public void Tick()
     {
-        for (int i = 0; i < items.Count; i++)
-            items[i].OnInInventory();
+        foreach(var item in items)
+            item.OnInInventory();
     }
-
-    public void AddItem(ICollectable newItem)
+        
+    public void AddItem(IStorable newItem)
     {
         items.Add(newItem);
         OnItemWasAdded.Invoke(newItem);
     }
-    public void RemoveItems<T>(int count = int.MaxValue) where T : ICollectable
+    public void RemoveItems<T>(int count = int.MaxValue) where T : IStorable
     {
         GetItems<T>(count, true);
     }
@@ -40,11 +41,12 @@ public sealed class Inventory : MonoBehaviour, IInventory
                 if (remove)
                 {
                     this.items.RemoveAt(i);
-                    OnItemWasRemoved?.Invoke(nextOre as ICollectable);
+                    OnItemWasRemoved?.Invoke(nextOre as IStorable);
                 }
             }
         }
 
         return ore.ToArray();
     }
+
 }

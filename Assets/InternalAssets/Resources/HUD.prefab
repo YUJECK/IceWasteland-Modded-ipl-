@@ -1926,7 +1926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c4ccadecea5744f9929d847e0f4469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 8438079562514832406}
+  inventoryGameObject: {fileID: 8438079562514832406}
   slots:
   - {fileID: 1484111663902709641}
   - {fileID: 2654264829193114905}

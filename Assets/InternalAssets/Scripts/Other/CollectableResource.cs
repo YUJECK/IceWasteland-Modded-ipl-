@@ -3,6 +3,6 @@ using UnityEngine;
 
 public abstract class CollectableResource : MonoBehaviour
 {
-    [SerializeField, Interface(typeof(ICollectable))] protected Object resource;
-    public ICollectable Resource => resource as ICollectable;
+    [SerializeField, Interface(typeof(IStorable))] protected Object resource;
+    public IStorable Resource => resource as IStorable;
 }

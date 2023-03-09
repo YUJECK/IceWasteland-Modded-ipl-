@@ -18,6 +18,11 @@ public sealed class InputService : IInputService
         return Input.GetKeyDown(KeyCode.E);
     }
 
+    public bool IsInventoryKeyUp()
+    {
+        return Input.GetKeyUp(KeyCode.E);
+    }
+
     public bool IsShootKeyDown()
     {
         return Input.GetMouseButtonDown(0);

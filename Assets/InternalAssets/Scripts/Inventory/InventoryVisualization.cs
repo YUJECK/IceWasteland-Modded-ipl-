@@ -1,3 +1,4 @@
+using IceWasteland.Services;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +7,18 @@ using Zenject;
 public class InventoryVisualization : MonoBehaviour
 {
     [SerializeField] private GameObject inventoryGameObject;
-    [SerializeField] private IInventory inventory;
     [SerializeField] private List<InventorySlot> slots = new();
     private int lastNotOccupiedSlot = 0;
 
+    private IInventory inventory;
+    private IInputService inputService;
+
     [Inject]
-    public void Construct(IInventory inventory)
-        => this.inventory = inventory;
+    public void Construct(IInventory inventory, IInputService inputService)
+    { 
+        this.inventory = inventory;
+        this.inputService = inputService;
+    }     
 
     private void Start()
     {
@@ -27,11 +33,19 @@ public class InventoryVisualization : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) inventoryGameObject.SetActive(true);
-        if (Input.GetKeyUp(KeyCode.E)) inventoryGameObject.SetActive(false);
+        if (inputService.IsInventoryKeyDown()) 
+            EnableInventoryUI();
+
+        if (inputService.IsInventoryKeyUp()) 
+            DisableInventoryUI();
     }
 
-    private void AddItem(ICollectable newItem)
+    private void DisableInventoryUI()
+        => inventoryGameObject.SetActive(false);
+    private void EnableInventoryUI()
+        => inventoryGameObject.SetActive(true);
+
+    private void AddItem(IStorable newItem)
     {
         InventorySlot slot = FindSlotWithTypeFromItem(newItem);
 
@@ -44,7 +58,7 @@ public class InventoryVisualization : MonoBehaviour
 
         ComposeItems();
     }
-    private void RemoveItem(ICollectable removeItem)
+    private void RemoveItem(IStorable removeItem)
     {
         FindSlotWithTypeFromItem(removeItem)?.RemoveCurrentItem();
         ComposeItems();
@@ -67,7 +81,7 @@ public class InventoryVisualization : MonoBehaviour
     }
 
 
-    private InventorySlot FindSlotWithTypeFromItem(ICollectable item)
+    private InventorySlot FindSlotWithTypeFromItem(IStorable item)
     {
         if (item != null)
         {

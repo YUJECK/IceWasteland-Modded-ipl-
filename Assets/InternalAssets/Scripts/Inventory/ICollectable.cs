@@ -1,10 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public interface ICollectable
+public interface IStorable
 {
-    Sprite InventoryIcon { get; }
-    string ItemName { get; }
+    Sprite Icon { get; }
+    string Name { get; }
 
     void OnAdded();
     void OnRemoved();

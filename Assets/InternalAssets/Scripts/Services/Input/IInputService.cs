@@ -6,6 +6,7 @@ namespace IceWasteland.Services
     {
         Vector2 GetMovement();
         bool IsShootKeyDown();
+        bool IsInventoryKeyUp();
         bool IsInventoryKeyDown();
     }
 }
