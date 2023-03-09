@@ -1,16 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Assets.Script.Other
 {
-    public sealed class RubyOre : CollectableResource, IPickable
+    public sealed class RubyOre : MonoBehaviour, IPickable
     {
         [SerializeField] GameObject rubyDustParticle;
-        public UnityEvent OnPickUp { get; private set; } = new();
+        private ICollectable ruby = new RubyResource();
+
+        public event Action OnPickUp; 
 
         public void PickUp()
         {
-            FindObjectOfType<Inventory>().AddItem(Resource.Clone());
+            FindObjectOfType<Inventory>().AddItem(ruby);
 
             Instantiate(rubyDustParticle, transform.position, transform.rotation);
             Destroy(gameObject);

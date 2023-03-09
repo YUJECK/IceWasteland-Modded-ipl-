@@ -9,9 +9,9 @@ public class Bee : MonoBehaviour
 
     private PointTarget[] targetPoints;
     private int randomPoint;
-
+    
     private TargetLocator targetLocator;
-
+    
     private PlayerTarget target => targetLocator.CurrentTarget;
     
     [Inject]

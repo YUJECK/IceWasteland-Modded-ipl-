@@ -8,6 +8,11 @@ namespace IceWasteland.Spawners
 {
     public sealed class BeeFactory : MonoBehaviour
     {
+        [SerializeField] private float spawnRate = 2f;
+        [SerializeField] private int beesLimit = 15;
+
+        private int currentBeesCount = 0;
+
         private DiContainer _container = new();
         private Bee _beePrefab;
 
@@ -27,13 +32,16 @@ namespace IceWasteland.Spawners
         }
         private async void Spawning(CancellationToken token)
         {
-            while (true)
+            while (currentBeesCount <= beesLimit)
             {
                 Create();
-                await UniTask.Delay(TimeSpan.FromSeconds(5f), cancellationToken: token);
+                await UniTask.Delay(TimeSpan.FromSeconds(spawnRate), cancellationToken: token);
             }
         }
         public Bee Create()
-            => _container.InstantiatePrefabForComponent<Bee>(_beePrefab, transform.position, Quaternion.identity, null);
+        {
+            currentBeesCount++;
+            return _container.InstantiatePrefabForComponent<Bee>(_beePrefab, transform.position, Quaternion.identity, null);
+        }
     }
 }

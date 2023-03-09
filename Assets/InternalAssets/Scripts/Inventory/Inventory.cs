@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class Inventory : MonoBehaviour
+public sealed class Inventory : MonoBehaviour, IInventory
 {
     private readonly List<ICollectable> items = new();
 
@@ -12,7 +12,7 @@ public sealed class Inventory : MonoBehaviour
     private void Update()
     {
         for (int i = 0; i < items.Count; i++)
-            items[i].OnInInventory?.Invoke();
+            items[i].OnInInventory();
     }
 
     public void AddItem(ICollectable newItem)

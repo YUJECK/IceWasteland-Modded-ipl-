@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,7 +6,8 @@ public sealed class GoldOre : MonoBehaviour, IPickable
 {
     [SerializeField] private int money = 30;
     [SerializeField] GameObject goldDustParticle;
-    public UnityEvent OnPickUp { get; private set; }
+
+    public event Action OnPickUp;
 
     public void PickUp() 
     {

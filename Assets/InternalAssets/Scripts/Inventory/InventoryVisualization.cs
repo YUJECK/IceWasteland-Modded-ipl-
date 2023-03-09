@@ -1,28 +1,34 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class InventoryVisualization : MonoBehaviour
 {
-    [SerializeField] private GameObject inventory;
+    [SerializeField] private GameObject inventoryGameObject;
+    [SerializeField] private IInventory inventory;
     [SerializeField] private List<InventorySlot> slots = new();
     private int lastNotOccupiedSlot = 0;
 
-    private void OnEnable()
+    [Inject]
+    public void Construct(IInventory inventory)
+        => this.inventory = inventory;
+
+    private void Start()
     {
-        FindObjectOfType<Inventory>().OnItemWasAdded += AddItem;
-        FindObjectOfType<Inventory>().OnItemWasRemoved += RemoveItem;
+        inventory.OnItemWasAdded += AddItem;
+        inventory.OnItemWasRemoved += RemoveItem;
     }
-    private void OnDisable()
+    private void OnDestroy()
     {
-        FindObjectOfType<Inventory>().OnItemWasAdded -= AddItem;
-        FindObjectOfType<Inventory>().OnItemWasRemoved -= RemoveItem;
+        inventory.OnItemWasAdded -= AddItem;
+        inventory.OnItemWasRemoved -= RemoveItem;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) inventory.SetActive(true);
-        if (Input.GetKeyUp(KeyCode.E)) inventory.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.E)) inventoryGameObject.SetActive(true);
+        if (Input.GetKeyUp(KeyCode.E)) inventoryGameObject.SetActive(false);
     }
 
     private void AddItem(ICollectable newItem)

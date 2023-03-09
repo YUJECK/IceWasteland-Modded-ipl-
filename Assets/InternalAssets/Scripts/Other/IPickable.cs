@@ -1,7 +1,7 @@
-﻿using UnityEngine.Events;
+﻿using System;
 
 public interface IPickable
 {
-    public UnityEvent OnPickUp { get; }
-    public void PickUp();
+    event Action OnPickUp;
+    void PickUp();
 }

@@ -15,7 +15,7 @@ public class SaleMachine : MonoBehaviour
 
             for (int i = 0; i < recyclableItems.Length; i++)
             {
-                recyclableItems[i].OnSold?.Invoke();
+                recyclableItems[i].OnSold();
                 MoneyManager.AddMoney(recyclableItems[i].Cost);
 
                 Debug.Log(recyclableItems[i].Cost);

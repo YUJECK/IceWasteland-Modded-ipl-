@@ -1,10 +1,10 @@
 ﻿using IceWasteland.Player;
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PackageSpeed : MonoBehaviour, IPickable
 {
-    public UnityEvent OnPickUp { get; private set; }
+    public event Action OnPickUp;
 
     public void PickUp()
     {

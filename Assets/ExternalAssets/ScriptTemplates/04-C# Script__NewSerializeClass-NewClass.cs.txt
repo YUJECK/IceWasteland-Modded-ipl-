@@ -1,0 +1,9 @@
+using UnityEngine;
+
+#ROOTNAMESPACEBEGIN#
+[System.Serializable]
+public sealed class #SCRIPTNAME#
+{
+#NOTRIM#
+}
+#ROOTNAMESPACEEND#

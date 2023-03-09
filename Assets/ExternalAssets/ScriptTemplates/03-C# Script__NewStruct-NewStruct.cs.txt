@@ -1,0 +1,9 @@
+using UnityEngine;
+
+#ROOTNAMESPACEBEGIN#
+[System.Serializable]
+public struct #SCRIPTNAME#
+{
+#NOTRIM#
+}
+#ROOTNAMESPACEEND#

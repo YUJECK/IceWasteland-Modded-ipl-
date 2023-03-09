@@ -1,7 +1,8 @@
-﻿using UnityEngine.Events;
+﻿using System;
 
 public interface ISellable
 {
     int Cost { get; }
-    UnityEvent OnSold { get; }
+
+    void OnSold();
 }
