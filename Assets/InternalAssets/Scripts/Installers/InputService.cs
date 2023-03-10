@@ -14,17 +14,11 @@ public sealed class InputService : IInputService
     }
 
     public bool IsInventoryKeyDown()
-    {
-        return Input.GetKeyDown(KeyCode.E);
-    }
+        => Input.GetKeyDown(KeyCode.E);
 
     public bool IsInventoryKeyUp()
-    {
-        return Input.GetKeyUp(KeyCode.E);
-    }
+        => Input.GetKeyUp(KeyCode.E);
 
     public bool IsShootKeyDown()
-    {
-        return Input.GetMouseButtonDown(0);
-    }
+        => Input.GetMouseButtonDown(0);
 }

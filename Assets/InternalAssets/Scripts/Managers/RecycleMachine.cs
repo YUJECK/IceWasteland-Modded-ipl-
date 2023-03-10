@@ -5,9 +5,10 @@ namespace IceWasteland.Machines
 {
     public sealed class RecycleMachine : MonoBehaviour
     {
-        private Inventory inventory;
+        private IInventory inventory;
 
-        private void Awake() => inventory = FindObjectOfType<Inventory>();
+        private void Construct(IInventory inventory)
+            => this.inventory = inventory;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

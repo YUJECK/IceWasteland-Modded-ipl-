@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -171,8 +171,6 @@ MonoBehaviour:
   Config:
     Name: Magenta Crystal
     Icon: {fileID: 21300000, guid: 3a0c527d7f890d64a9b56b086e6e766a, type: 3}
-  oreImplementation: {fileID: 0}
-  oreCollider: {fileID: 0}
 --- !u!65 &98075420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -234,8 +232,6 @@ MonoBehaviour:
   Config:
     Name: This rubi
     Icon: {fileID: 21300000, guid: 8325d4ef0a6eb3d43952aff8a06d9f45, type: 3}
-  oreImplementation: {fileID: 0}
-  oreCollider: {fileID: 0}
 --- !u!135 &452010437
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -396,8 +392,6 @@ MonoBehaviour:
   Config:
     Name: This Gold
     Icon: {fileID: 21300000, guid: 9c0d6ec706e01ce448aea81584af092b, type: 3}
-  oreImplementation: {fileID: 0}
-  oreCollider: {fileID: 0}
 --- !u!65 &1653851297
 BoxCollider:
   m_ObjectHideFlags: 0

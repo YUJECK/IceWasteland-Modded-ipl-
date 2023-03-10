@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using IceWasteland.Inventory;
+using UnityEngine;
 using UnityEngine.UI;
 
 public sealed class InventorySlot : MonoBehaviour
@@ -32,12 +33,12 @@ public sealed class InventorySlot : MonoBehaviour
         if (CurrentItem == null)
         {
             CurrentItem = newItem;
-            itemIcon.sprite = newItem.Icon;
+            itemIcon.sprite = newItem.Config.Icon;
             itemsCount = 1;
         }
         else
-            Debug.LogError($"Cant add new item {newItem.Name}. Slot is alreadt occupied");
+            Debug.LogError($"Cant add new item {newItem.Config.Name}. Slot is alreadt occupied");
     }
 
-    public override string ToString() => CurrentItem.Name;
+    public override string ToString() => CurrentItem.Config.Name;
 }

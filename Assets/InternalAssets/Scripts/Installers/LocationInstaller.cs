@@ -13,8 +13,7 @@ public sealed class LocationInstaller : MonoInstaller
         BindInputService();
         
         Container
-            .Bind<IInventory>()
-            .To<Inventory>()
+            .BindInterfacesTo<Inventory>()
             .FromInstance(new Inventory())
             .AsSingle()
             .NonLazy();
@@ -22,7 +21,6 @@ public sealed class LocationInstaller : MonoInstaller
         BindPlayer();
         BindHUD();
         BindPointTargets();
-
     }
 
     private void BindPointTargets()

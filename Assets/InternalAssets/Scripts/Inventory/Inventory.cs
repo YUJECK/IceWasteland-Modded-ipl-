@@ -1,3 +1,4 @@
+using IceWasteland.Inventory;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,10 +23,10 @@ public sealed class Inventory : MonoBehaviour, IInventory, ITickable
         OnItemWasAdded.Invoke(newItem);
     }
     public void RemoveItems<T>(int count = int.MaxValue) where T : IStorable
-    {
-        GetItems<T>(count, true);
-    }
+        => GetItems<T>(count, true);
+
     public IRecyclable[] GetRecyclableItems(bool removeItems) => GetItems<IRecyclable>(int.MaxValue, removeItems);
+    
     public ISellable[] GetSellableItems(bool removItems) => GetItems<ISellable>(int.MaxValue, removItems);
 
     private T[] GetItems<T>(int range = int.MaxValue, bool remove = false)

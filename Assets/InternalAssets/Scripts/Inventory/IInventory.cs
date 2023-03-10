@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IceWasteland.Inventory;
+using System;
 
 public interface IInventory
 {

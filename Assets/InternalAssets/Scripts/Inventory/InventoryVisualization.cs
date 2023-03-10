@@ -1,3 +1,4 @@
+using IceWasteland.Inventory;
 using IceWasteland.Services;
 using System;
 using System.Collections.Generic;
