@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fa9749bedfc894d9d71f3c6346cc93, type: 3}
   m_Name: New Ruby Resource
   m_EditorClassIdentifier: 
+  <Config>k__BackingField:
+    <Icon>k__BackingField: {fileID: 21300000, guid: 6237c451bf43bde4d835e2c3825a526a, type: 3}
+    <Name>k__BackingField: "\u0420\u0443\u0431\u0438\u043D"
   <Cost>k__BackingField: 15
