@@ -11,4 +11,4 @@ namespace IceWasteland.ResourcesCore
         public virtual void OnInInventory() { }
         public virtual void OnRemoved() { }
     }
-} 
+}

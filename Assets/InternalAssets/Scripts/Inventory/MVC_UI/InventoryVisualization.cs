@@ -8,18 +8,19 @@ using Zenject;
 public class InventoryVisualization : MonoBehaviour
 {
     [SerializeField] private GameObject inventoryGameObject;
-    [SerializeField] private List<InventorySlot> slots = new();
+    private List<InventorySlot> slots = new();
     private int lastNotOccupiedSlot = 0;
 
     private IInventory inventory;
     private IInputService inputService;
 
     [Inject]
-    public void Construct(IInventory inventory, IInputService inputService)
-    { 
+    public void Construct(IInventory inventory, IInputService inputService, InventorySlotsProvider slotsProvider)
+    {
         this.inventory = inventory;
         this.inputService = inputService;
-    }     
+        this.slots = slotsProvider.Get();
+    }
 
     private void Start()
     {
@@ -31,13 +32,12 @@ public class InventoryVisualization : MonoBehaviour
         inventory.OnItemWasAdded -= AddItem;
         inventory.OnItemWasRemoved -= RemoveItem;
     }
-
     private void Update()
     {
-        if (inputService.IsInventoryKeyDown()) 
+        if (inputService.OnInventoryKeyDown())
             EnableInventoryUI();
 
-        if (inputService.IsInventoryKeyUp()) 
+        if (inputService.OnInventoryKeyUp())
             DisableInventoryUI();
     }
 
@@ -55,28 +55,28 @@ public class InventoryVisualization : MonoBehaviour
             slots[lastNotOccupiedSlot].AddItem(newItem);
             lastNotOccupiedSlot++;
         }
-        else slot.AddItem(newItem);
+        else slot.AddItem<>(newItem);
 
         ComposeItems();
     }
     private void RemoveItem(IStorable removeItem)
     {
-        FindSlotWithTypeFromItem(removeItem)?.RemoveCurrentItem();
+        FindSlotWithTypeFromItem(removeItem)?.RemoveItem();
         ComposeItems();
     }
     private void ComposeItems()
     {
-        bool hasEmptySlot = false;
+        Stack<InventorySlot> emptySlots = new();
 
         for (int i = 0; i < slots.Count; i++)
         {
-            if (slots[i].CurrentItem == null)
-                hasEmptySlot = true;
+            if (slots[i].IsEmpty)
+                emptySlots.Push(slots[i]);
 
-            else if (hasEmptySlot)
+            else if (emptySlots.Count > 0)
             {
-                slots[i - 1].AddItem(slots[i].CurrentItem);
-                slots[i].RemoveCurrentItem();
+                emptySlots.Peek().AddItem(slots[i].ItemsStored);
+                slots[i].RemoveItem();
             }
         }
     }
@@ -88,9 +88,9 @@ public class InventoryVisualization : MonoBehaviour
         {
             for (int i = 0; i < slots.Count; i++)
             {
-                if (slots[i].CurrentItem == null)
-                    break;
-                if (slots[i].CurrentItem.GetType() == item.GetType())
+                if (slots[i].IsEmpty) break;
+
+                if (CompareTypes(slots[i].ItemType, item.GetType()))
                     return slots[i];
             }
         }
@@ -98,4 +98,7 @@ public class InventoryVisualization : MonoBehaviour
 
         return null;
     }
+
+    private bool CompareTypes(Type type1, Type type2)
+        => type1 == type2;
 }

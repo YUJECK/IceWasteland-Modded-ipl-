@@ -18,7 +18,7 @@ namespace Assets.Script.Other
         public void Construct(IInventory inventory, ResourcesHandler resourcesHandler)
         {
             this.inventory = inventory;
-            this.ruby = resourcesHandler.Get<RubyResource>() as RubyResource;
+            this.ruby = (resourcesHandler.Get<RubyResource>() as RubyResource);
         }
         
         public void PickUp()

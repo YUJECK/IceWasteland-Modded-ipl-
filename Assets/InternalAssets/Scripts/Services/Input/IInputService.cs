@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace IceWasteland.Services
 {
@@ -6,7 +7,8 @@ namespace IceWasteland.Services
     {
         Vector2 GetMovement();
         bool IsShootKeyDown();
-        bool IsInventoryKeyUp();
-        bool IsInventoryKeyDown();
+
+        event Action OnInventoryKeyUp;
+        event Action OnInventoryKeyDown;
     }
 }

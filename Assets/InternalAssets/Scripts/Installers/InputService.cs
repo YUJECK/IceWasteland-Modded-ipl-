@@ -1,7 +1,9 @@
 ﻿using IceWasteland.Services;
+using System;
 using UnityEngine;
+using Zenject;
 
-public sealed class InputService : IInputService
+public sealed class InputService : IInputService, ITickable
 {
     private Vector2 movement;
     
@@ -12,13 +14,24 @@ public sealed class InputService : IInputService
         
         return movement;
     }
+    public bool IsShootKeyDown()
+        => Input.GetMouseButtonDown(0);
 
-    public bool IsInventoryKeyDown()
+    public event Action OnInventoryKeyUp;
+    public event Action OnInventoryKeyDown;
+
+    private bool IsInventoryKeyDown()
         => Input.GetKeyDown(KeyCode.E);
 
     public bool IsInventoryKeyUp()
         => Input.GetKeyUp(KeyCode.E);
 
-    public bool IsShootKeyDown()
-        => Input.GetMouseButtonDown(0);
+    public void Tick()
+    {
+        if (IsInventoryKeyDown())
+            OnInventoryKeyDown?.Invoke();
+        
+        if (IsInventoryKeyUp())
+            OnInventoryKeyUp?.Invoke();
+    }
 }

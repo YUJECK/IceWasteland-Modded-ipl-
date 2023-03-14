@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace IceWasteland.ResourcesCore
 {
@@ -10,7 +11,13 @@ namespace IceWasteland.ResourcesCore
         public ResourcesHandler(Dictionary<Type, Resource> resources)
             => this.resources = resources;
 
-        public Resource Get<T>()
-            => resources[typeof(T)];
+        public Resource Get<TItem>()
+            => CloneItem<TItem>();
+
+        private Resource CloneItem<TItem>()
+        {
+            Resource item = resources[typeof(TItem)];
+            return GameObject.Instantiate(item);
+        }
     }
 }
