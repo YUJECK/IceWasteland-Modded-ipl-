@@ -14,7 +14,7 @@ public sealed class InventorySlot : MonoBehaviour
     public Type ItemType { get; private set; }
     public List<IStorable> ItemsStored { get; private set; }
 
-    public void AddItem<TItem>(IStorable newItem)
+    public void AddItem(IStorable[] newItem, Type type)
     {
         if (ItemsStored == null)
         {
@@ -22,13 +22,7 @@ public sealed class InventorySlot : MonoBehaviour
             return;
         }
 
-        if (typeof(TItem) != ItemType)
-        {
-            Debug.LogError("You tried to add to incorrect slot");
-            return;
-        }
-
-        ItemsStored.Add(newItem);
+        ItemsStored.AddRange(newItem);
     }
     public void RemoveItem()
     {
@@ -41,10 +35,5 @@ public sealed class InventorySlot : MonoBehaviour
         itemIcon.gameObject.SetActive(false);
         itemsCountText.gameObject.SetActive(false);
     }
-
-    private void BindItemToSlot(IStorable newItem)
-    {
-    }
-
     public override string ToString() => ItemsStored[0].Config.Name;
 }

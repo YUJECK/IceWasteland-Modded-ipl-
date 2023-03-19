@@ -58,6 +58,11 @@ public sealed class LocationInstaller : MonoInstaller
     private void BindHUD()
     {
         Object hudPrefab = Resources.Load(AssetsPath.HUD);
-        Container.InstantiatePrefab(hudPrefab, startPoint.position, Quaternion.identity, null);
+        GameObject hud = Container.InstantiatePrefab(hudPrefab, startPoint.position, Quaternion.identity, null);
+
+        Container
+            .Bind<InventorySlotsProvider>()
+            .FromComponentInChildren(hud)
+            .AsSingle();
     }
 }

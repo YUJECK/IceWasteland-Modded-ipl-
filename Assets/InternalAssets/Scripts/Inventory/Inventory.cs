@@ -6,48 +6,61 @@ using Zenject;
 
 public sealed class Inventory : MonoBehaviour, IInventory, ITickable
 {
-    private readonly List<IStorable> items = new();
+    public Dictionary<Type, List<IStorable>> Items { get; } = new();
 
     public event Action<IStorable> OnItemWasAdded;
     public event Action<IStorable> OnItemWasRemoved;
 
     public void Tick()
     {
-        foreach(var item in items)
-            item.OnInInventory();
+        foreach(KeyValuePair<Type, List<IStorable>> itemList in Items)
+        {
+            foreach (IStorable item in itemList.Value)
+                item.OnInInventory();
+        }
     }
         
-    public void AddItem(IStorable newItem)
+    public void AddItem<TItem>(TItem newItem) where TItem : IStorable
     {
-        items.Add(newItem);
-        OnItemWasAdded.Invoke(newItem);
+        Items.TryAdd(
+            typeof(TItem),
+            new List<IStorable>());
+
+        Items[typeof(TItem)].Add(newItem);
+
+        OnItemWasAdded?.Invoke(newItem);
     }
-    public void RemoveItems<T>(int count = int.MaxValue) where T : IStorable
-        => GetItems<T>(count, true);
+    public void RemoveItems<TItem>() where TItem : IStorable
+        => Items.Remove(typeof(TItem));
 
-    public IRecyclable[] GetRecyclableItems(bool removeItems) => GetItems<IRecyclable>(int.MaxValue, removeItems);
-    
-    public ISellable[] GetSellableItems(bool removItems) => GetItems<ISellable>(int.MaxValue, removItems);
+    public bool Contains<TItem>() where TItem : IStorable
+        => Items.ContainsKey(typeof(TItem));
 
-    private T[] GetItems<T>(int range = int.MaxValue, bool remove = false)
+
+    public IRecyclable[] GetRecyclableItems(bool removeItems)
+        => GetItems<IRecyclable>(removeItems);
+
+    public ISellable[] GetSellableItems(bool removeItems) 
+        => GetItems<ISellable>(removeItems);
+
+    private T[] GetItems<T>(bool remove)
     {
         List<T> ore = new();
 
-        for (int i = 0; i < this.items.Count; i++)
+        foreach (var item in Items)
         {
-            if (this.items[i] is T nextOre && ore.Count < range)
+            if (item.Key is T)
             {
-                ore.Add(nextOre);
-
-                if (remove)
-                {
-                    this.items.RemoveAt(i);
-                    OnItemWasRemoved?.Invoke(nextOre as IStorable);
-                }
+                if(remove) Items.Remove(item.Key);
+                ore.AddRange(item.Value as List<T>);
             }
         }
 
         return ore.ToArray();
     }
 
+    public IStorable[] Get<TItem>() where TItem : IStorable
+    {
+        return GetItems<TItem>(false) as IStorable[];
+    }
 }

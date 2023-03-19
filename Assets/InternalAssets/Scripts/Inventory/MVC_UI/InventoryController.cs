@@ -1,26 +1,31 @@
 ﻿using IceWasteland.Services;
-using static UnityEditor.Timeline.Actions.MenuPriority;
+using System;
+using UnityEngine;
 
 namespace IceWasteland.Inventory.UI
 {
     public sealed class InventoryController
     {
-        private readonly InventoryModel _inventoryModel;
+        public readonly InventoryModel InventoryModel;
+        private readonly InventoryView _inventoryView;
+
+        public event Action<IStorable> OnItemWasAdded;
+        public event Action<IStorable> OnItemWasRemoved;
 
         public InventoryController(
-            IInventory inventory,
-            IInputService inputService,
-            InventorySlotsProvider slotsProvider)
+            IInventory inventory, IInputService inputService, InventorySlotsProvider slotsProvider, InventoryView inventoryView, GameObject test)
         {
-            _inventoryModel = new(inventory, inputService, slotsProvider);
-            SubscribeToInputs(inputService);
+            InventoryModel = new(inventory, inputService, slotsProvider, test);
+            this._inventoryView = inventoryView;
+            
             SubscribeToInventoryEvents(inventory);
+            SubscribeToInputs(inputService);
         }
 
-        private static void SubscribeToInventoryEvents(IInventory inventory)
+        private void SubscribeToInventoryEvents(IInventory inventory)
         {
-            inventory.OnItemWasAdded += AddItem;
-            inventory.OnItemWasRemoved += RemoveItem;
+            inventory.OnItemWasAdded += OnInventoryUpdated; 
+            inventory.OnItemWasRemoved += OnInventoryUpdated;
         }
 
         private void SubscribeToInputs(IInputService inputService)
@@ -29,20 +34,12 @@ namespace IceWasteland.Inventory.UI
             inputService.OnInventoryKeyUp += OnInventoryKeyUp;
         }
 
+        private void OnInventoryUpdated(IStorable obj)
+            => _inventoryView.UpdateSlots();
 
         private void OnInventoryKeyUp()
-        {
-            DisableInventoryUI();
-        }
-
+            => _inventoryView.Disable();
         private void OnInventoryKeyDown()
-        {
-            EnableInventoryUI();
-        }
-
-        private void DisableInventoryUI()
-           => _inventoryModel.InventoryGameObject.SetActive(false);
-        private void EnableInventoryUI()
-            => _inventoryModel.InventoryGameObject.SetActive(true);
+            => _inventoryView.Enable();
     }
 }

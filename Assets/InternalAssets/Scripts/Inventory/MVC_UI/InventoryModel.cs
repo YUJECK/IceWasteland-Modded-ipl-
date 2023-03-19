@@ -13,11 +13,13 @@ namespace IceWasteland.Inventory.UI
         public readonly IInventory Inventory;
         public readonly IInputService InputService;
 
-        public InventoryModel(IInventory inventory, IInputService inputService, InventorySlotsProvider slotsProvider)
+        public InventoryModel(IInventory inventory, IInputService inputService, InventorySlotsProvider slotsProvider, GameObject ui)
         {
             Inventory = inventory;
             InputService = inputService;
             Slots = slotsProvider.Get();
+
+            InventoryGameObject = ui;
         }
     }
 }
