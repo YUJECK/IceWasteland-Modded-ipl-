@@ -12,17 +12,14 @@ public sealed class InventorySlot : MonoBehaviour
     public bool IsEmpty => ItemsStored.Count == 0;
 
     public Type ItemType { get; private set; }
-    public List<IStorable> ItemsStored { get; private set; }
+    public List<IStorable> ItemsStored { get; private set; } = new();
 
     public void AddItem(IStorable[] newItem, Type type)
     {
-        if (ItemsStored == null)
-        {
-            Debug.LogError("You tried to add null item");
-            return;
-        }
-
         ItemsStored.AddRange(newItem);
+
+        itemIcon.sprite = newItem[0].Config.Icon;
+        itemsCountText.text = newItem.Length.ToString();
     }
     public void RemoveItem()
     {

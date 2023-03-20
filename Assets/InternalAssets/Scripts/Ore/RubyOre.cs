@@ -19,6 +19,8 @@ namespace Assets.Script.Other
         {
             this.inventory = inventory;
             this.ruby = (resourcesHandler.Get<RubyResource>() as RubyResource);
+
+            Debug.Log(ruby.Config.Name);
         }
         
         public void PickUp()

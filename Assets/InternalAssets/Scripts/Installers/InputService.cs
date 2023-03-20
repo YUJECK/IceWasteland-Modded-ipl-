@@ -30,7 +30,7 @@ public sealed class InputService : IInputService, ITickable
     {
         if (IsInventoryKeyDown())
             OnInventoryKeyDown?.Invoke();
-        
+
         if (IsInventoryKeyUp())
             OnInventoryKeyUp?.Invoke();
     }

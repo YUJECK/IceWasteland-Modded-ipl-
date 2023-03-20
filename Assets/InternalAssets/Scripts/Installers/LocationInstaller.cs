@@ -1,5 +1,6 @@
 using IceWasteland;
 using IceWasteland.AICore;
+using IceWasteland.Inventory.UI;
 using IceWasteland.Player;
 using UnityEngine;
 using Zenject;
@@ -35,7 +36,7 @@ public sealed class LocationInstaller : MonoInstaller
 
     private void BindInputService()
     {
-        Container.BindInterfacesTo<InputService>().AsSingle().NonLazy();
+        Container.BindInterfacesAndSelfTo<InputService>().AsSingle().NonLazy();
     }
 
     private void BindPlayer()
@@ -62,7 +63,10 @@ public sealed class LocationInstaller : MonoInstaller
 
         Container
             .Bind<InventorySlotsProvider>()
-            .FromComponentInChildren(hud)
+            .FromInstance(hud.GetComponentInChildren<InventorySlotsProvider>())
             .AsSingle();
+
+        InventoryView inventoryView = new();
+        Container.Inject(inventoryView);
     }
 }

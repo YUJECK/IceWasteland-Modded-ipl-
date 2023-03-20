@@ -1,11 +1,10 @@
 ﻿using IceWasteland.Infrastructure;
 using IceWasteland.Services;
-using UnityEngine;
 using Zenject;
 
 namespace IceWasteland.Inventory.UI
 {
-    public sealed class InventoryView : MonoBehaviour, ISwitchable
+    public sealed class InventoryView : ISwitchable
     {
         private InventoryController _inventoryController;
         private readonly InventorySlotsProvider _slotsProvider;
@@ -14,7 +13,7 @@ namespace IceWasteland.Inventory.UI
 
         [Inject]
         public void Construct(IInventory inventory, IInputService inputService, InventorySlotsProvider slotsProvider)
-            => _inventoryController = new(inventory, inputService, slotsProvider, this, transform.GetChild(0).gameObject);
+            => _inventoryController = new(inventory, inputService, slotsProvider, this, slotsProvider.transform.parent.gameObject);
 
         public void UpdateSlots()
         {
@@ -29,10 +28,12 @@ namespace IceWasteland.Inventory.UI
 
         public void Enable()
         {
+            _inventoryController.InventoryModel.InventoryGameObject.SetActive(true);
         }
 
         public void Disable()
         {
+            _inventoryController.InventoryModel.InventoryGameObject.SetActive(false);
         }
     }
 }
