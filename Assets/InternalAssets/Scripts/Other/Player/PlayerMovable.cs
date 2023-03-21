@@ -19,9 +19,7 @@ namespace IceWasteland.Player
 
         [Inject]
         private void Construct(IInputService inputService)
-        {
-            this.inputService = inputService;
-        }
+            => this.inputService = inputService;
 
         private void Awake() => rigidbody2D = GetComponent<Rigidbody2D>();
         private void FixedUpdate() => Move();

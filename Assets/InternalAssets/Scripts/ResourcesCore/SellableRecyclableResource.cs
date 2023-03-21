@@ -2,6 +2,6 @@
 {
     public abstract class SellableRecyclableResource : SellableResource, IRecyclable
     {
-        public abstract void Recycle();
+        public virtual void Recycle() { }
     }
 }
