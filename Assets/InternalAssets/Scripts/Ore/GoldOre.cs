@@ -7,7 +7,7 @@ public sealed class GoldOre : MonoBehaviour, IPickable
     [SerializeField] private int money = 30;
     [SerializeField] GameObject goldDustParticle;
 
-    public event Action OnPickUp;
+    public event Action OnPickedUp;
 
     public void PickUp() 
     {

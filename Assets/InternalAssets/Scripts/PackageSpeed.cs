@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PackageSpeed : MonoBehaviour, IPickable
 {
-    public event Action OnPickUp;
+    public event Action OnPickedUp;
 
     public void PickUp()
     {

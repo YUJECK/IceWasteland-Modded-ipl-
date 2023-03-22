@@ -6,7 +6,7 @@ namespace IceWasteland.Services
     public interface IInputService
     {
         Vector2 GetMovement();
-        bool IsShootKeyDown();
+        event Action OnShootKeyDown;
 
         event Action OnInventoryKeyUp;
         event Action OnInventoryKeyDown;

@@ -2,6 +2,6 @@
 
 public interface IPickable
 {
-    event Action OnPickUp;
+    event Action OnPickedUp;
     void PickUp();
 }

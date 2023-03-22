@@ -7029,7 +7029,7 @@ GameObject:
   - component: {fileID: 420005544}
   - component: {fileID: 420005543}
   m_Layer: 0
-  m_Name: Ruby (6)
+  m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7047,6 +7047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fbaa1854825d445bf1fefe72bb6a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 524017635059273377, guid: 08c6f232496a49c4eb908dd9d9cb2d22, type: 3}
 --- !u!61 &420005544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20838,7 +20839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d34b0b212e6d584b9eb4609beccfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubyDustParticle: {fileID: 524017635059273377, guid: 61e38120a9733624c8a6a69bdc307984, type: 3}
+  pickupEffect: {fileID: 524017635059273377, guid: 61e38120a9733624c8a6a69bdc307984, type: 3}
 --- !u!61 &891732221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24721,7 +24722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d34b0b212e6d584b9eb4609beccfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubyDustParticle: {fileID: 524017635059273377, guid: 61e38120a9733624c8a6a69bdc307984, type: 3}
+  pickupEffect: {fileID: 524017635059273377, guid: 61e38120a9733624c8a6a69bdc307984, type: 3}
 --- !u!61 &1119660797
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27567,7 +27568,7 @@ GameObject:
   - component: {fileID: 1280875541}
   - component: {fileID: 1280875540}
   m_Layer: 0
-  m_Name: Ruby (4)
+  m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27585,6 +27586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fbaa1854825d445bf1fefe72bb6a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 524017635059273377, guid: 08c6f232496a49c4eb908dd9d9cb2d22, type: 3}
 --- !u!61 &1280875541
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28182,7 +28184,7 @@ GameObject:
   - component: {fileID: 1332366802}
   - component: {fileID: 1332366801}
   m_Layer: 0
-  m_Name: Ruby (5)
+  m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28200,6 +28202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fbaa1854825d445bf1fefe72bb6a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 524017635059273377, guid: 08c6f232496a49c4eb908dd9d9cb2d22, type: 3}
 --- !u!61 &1332366802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28653,7 +28656,7 @@ GameObject:
   - component: {fileID: 1360958171}
   - component: {fileID: 1360958170}
   m_Layer: 0
-  m_Name: Ruby (8)
+  m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28671,6 +28674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fbaa1854825d445bf1fefe72bb6a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 524017635059273377, guid: 08c6f232496a49c4eb908dd9d9cb2d22, type: 3}
 --- !u!61 &1360958171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34368,7 +34372,7 @@ GameObject:
   - component: {fileID: 1431384491}
   - component: {fileID: 1431384490}
   m_Layer: 0
-  m_Name: Ruby (7)
+  m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34386,6 +34390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fbaa1854825d445bf1fefe72bb6a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 524017635059273377, guid: 08c6f232496a49c4eb908dd9d9cb2d22, type: 3}
 --- !u!61 &1431384491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46708,7 +46713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d34b0b212e6d584b9eb4609beccfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubyDustParticle: {fileID: 524017635059273377, guid: 61e38120a9733624c8a6a69bdc307984, type: 3}
+  pickupEffect: {fileID: 524017635059273377, guid: 61e38120a9733624c8a6a69bdc307984, type: 3}
 --- !u!61 &1884434637
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60832,7 +60837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d34b0b212e6d584b9eb4609beccfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubyDustParticle: {fileID: 524017635059273377, guid: 61e38120a9733624c8a6a69bdc307984, type: 3}
+  pickupEffect: {fileID: 524017635059273377, guid: 61e38120a9733624c8a6a69bdc307984, type: 3}
 --- !u!4 &7832120896289034460
 Transform:
   m_ObjectHideFlags: 0

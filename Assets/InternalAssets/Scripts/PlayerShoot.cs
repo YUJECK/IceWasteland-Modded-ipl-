@@ -15,12 +15,7 @@ namespace IceWasteland.Player
         private void Construct(IInputService inputService)
         {
             this.inputService = inputService;
-        }
-
-        private void Update()
-        {
-            if(inputService.IsShootKeyDown())
-                Shoot();
+            this.inputService.OnShootKeyDown += Shoot;
         }
 
         private void Shoot() => Instantiate(bullet, firePoint.position, firePoint.rotation);

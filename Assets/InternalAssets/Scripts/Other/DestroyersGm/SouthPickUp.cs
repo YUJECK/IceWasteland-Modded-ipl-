@@ -6,7 +6,7 @@ public sealed class SouthPickUp : MonoBehaviour, IPickable
 {
     public UnityEvent OnPickUp { get; private set; }
 
-    event Action IPickable.OnPickUp
+    event Action IPickable.OnPickedUp
     {
         add
         {

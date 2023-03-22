@@ -14,20 +14,25 @@ public sealed class InputService : IInputService, ITickable
         
         return movement;
     }
-    public bool IsShootKeyDown()
-        => Input.GetMouseButtonDown(0);
 
     public event Action OnInventoryKeyUp;
     public event Action OnInventoryKeyDown;
+    public event Action OnShootKeyDown;
+
+    private bool IsShootKeyDown()
+        => Input.GetMouseButtonDown(0);
 
     private bool IsInventoryKeyDown()
         => Input.GetKeyDown(KeyCode.E);
 
-    public bool IsInventoryKeyUp()
+    private bool IsInventoryKeyUp()
         => Input.GetKeyUp(KeyCode.E);
 
     public void Tick()
     {
+        if(IsShootKeyDown())
+             OnShootKeyDown?.Invoke();
+
         if (IsInventoryKeyDown())
             OnInventoryKeyDown?.Invoke();
 
