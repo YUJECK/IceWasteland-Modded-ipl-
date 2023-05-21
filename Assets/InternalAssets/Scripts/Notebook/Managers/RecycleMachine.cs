@@ -1,5 +1,6 @@
 ﻿using IceWasteland.Helpers;
 using UnityEngine;
+using Zenject;
 
 namespace IceWasteland.Machines
 {
@@ -7,6 +8,7 @@ namespace IceWasteland.Machines
     {
         private IInventory inventory;
 
+        [Inject]
         private void Construct(IInventory inventory)
             => this.inventory = inventory;
 

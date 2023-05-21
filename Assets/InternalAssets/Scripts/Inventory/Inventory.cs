@@ -30,12 +30,15 @@ public sealed class Inventory : MonoBehaviour, IInventory, ITickable
 
         OnItemWasAdded?.Invoke(newItem);
     }
+
     public void RemoveItems<TItem>() where TItem : IStorable
-        => Items.Remove(typeof(TItem));
+    {
+        OnItemWasRemoved?.Invoke(Items[typeof(TItem)][0]);
+        Items.Remove(typeof(TItem));
+    }
 
     public bool Contains<TItem>() where TItem : IStorable
         => Items.ContainsKey(typeof(TItem));
-
 
     public IRecyclable[] GetRecyclableItems(bool removeItems)
         => GetItems<IRecyclable>(removeItems);
@@ -43,24 +46,30 @@ public sealed class Inventory : MonoBehaviour, IInventory, ITickable
     public ISellable[] GetSellableItems(bool removeItems) 
         => GetItems<ISellable>(removeItems);
 
-    private T[] GetItems<T>(bool remove)
-    {
-        List<T> ore = new();
+    public IStorable[] Get<TItem>() where TItem : IStorable
+        => GetItems<TItem>(false) as IStorable[];
 
+    private TItem[] GetItems<TItem>(bool remove) 
+    {
+        List<TItem> ore = new();
+
+        Debug.Log("Start");
         foreach (var item in Items)
         {
-            if (item.Key is T)
+            Debug.Log("In");
+            if (item.Key is TItem || item.Key.IsSubclassOf(typeof(TItem)))
             {
-                if(remove) Items.Remove(item.Key);
-                ore.AddRange(item.Value as List<T>);
+                Debug.Log("Is");
+
+                if(remove)
+                {
+                    OnItemWasRemoved?.Invoke(Items[typeof(TItem)][0]);
+                    Items.Remove(typeof(TItem));
+                }
+                ore.AddRange(item.Value as List<TItem>);
             }
         }
 
         return ore.ToArray();
-    }
-
-    public IStorable[] Get<TItem>() where TItem : IStorable
-    {
-        return GetItems<TItem>(false) as IStorable[];
     }
 }
