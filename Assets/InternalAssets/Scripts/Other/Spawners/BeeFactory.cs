@@ -1,6 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
-using System;
-using System.Threading;
+﻿using System.Collections;
+using IceWasteland.AICore;
 using UnityEngine;
 using Zenject;
 
@@ -11,7 +10,7 @@ namespace IceWasteland.Spawners
         [SerializeField] private float spawnRate = 2f;
         [SerializeField] private int beesLimit = 15;
 
-        private int currentBeesCount = 0;
+        private int _currentBeesCount = 0;
 
         private DiContainer _container = new();
         private Bee _beePrefab;
@@ -23,24 +22,24 @@ namespace IceWasteland.Spawners
         public void Start()
         {
             LoadBeePrefab();
-            Spawning(this.GetCancellationTokenOnDestroy());
+            StartCoroutine(Spawning());
         }
 
         private void LoadBeePrefab()
         {
             _beePrefab = Resources.Load<Bee>(AssetsPath.BEE);
         }
-        private async void Spawning(CancellationToken token)
+        private IEnumerator Spawning()
         {
-            while (currentBeesCount <= beesLimit)
+            while (_currentBeesCount <= beesLimit)
             {
                 Create();
-                await UniTask.Delay(TimeSpan.FromSeconds(spawnRate), cancellationToken: token);
+                yield return new WaitForSeconds(spawnRate);
             }
         }
         public Bee Create()
         {
-            currentBeesCount++;
+            _currentBeesCount++;
             return _container.InstantiatePrefabForComponent<Bee>(_beePrefab, transform.position, Quaternion.identity, null);
         }
     }

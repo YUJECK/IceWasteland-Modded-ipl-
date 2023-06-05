@@ -4,16 +4,16 @@ using UnityEngine;
 namespace IceWasteland.Player
 {
     [RequireComponent(typeof(PlayerMovable))]
-    [RequireComponent(typeof(PlayerTarget))]
+    [RequireComponent(typeof(Target))]
     public sealed class PlayerProvider : MonoBehaviour
     {
         public PlayerMovable PlayerMovable { get; private set; }
-        public PlayerTarget Target { get; private set; }
+        public Target Target { get; private set; }
 
         private void Awake()
         {
             PlayerMovable = GetComponent<PlayerMovable>();
-            Target = GetComponent<PlayerTarget>();
+            Target = GetComponent<Target>();
         }
     }
 }

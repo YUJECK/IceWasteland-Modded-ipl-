@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 
-public class NoteInfo 
+namespace IceWasteland.Notebook
 {
-    public string NoteText { get; private set; }
-    public string NoteTitle { get; private set; }
-    public Sprite NoteIcon { get; private set; }
-
-    public NoteInfo(string noteText, string noteTitile, Sprite noteSprite)
+    public sealed class NoteInfo 
     {
-        NoteText = noteText;
-        NoteTitle = noteTitile;
-        NoteIcon = noteSprite;
+        public string NoteText { get; private set; }
+        public string NoteTitle { get; private set; }
+        public Sprite NoteIcon { get; private set; }
+
+        public NoteInfo(string noteText, string noteTitle, Sprite noteSprite)
+        {
+            NoteText = noteText;
+            NoteTitle = noteTitle;
+            NoteIcon = noteSprite;
+        }
     }
 }

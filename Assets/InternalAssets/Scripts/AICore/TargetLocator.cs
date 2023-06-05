@@ -5,14 +5,14 @@ namespace IceWasteland.AICore
 {
     public sealed class TargetLocator : MonoBehaviour
     {
-        public event Action<PlayerTarget> OnTargetFound;
-        public event Action<PlayerTarget> OnTargetMissed;
+        public event Action<Target> OnTargetFound;
+        public event Action<Target> OnTargetMissed;
 
-        public PlayerTarget CurrentTarget { get; private set; }
+        public Target CurrentTarget { get; private set; }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out PlayerTarget target))
+            if (collision.TryGetComponent(out Target target))
             {
                 CurrentTarget = target;
                 OnTargetFound?.Invoke(target);

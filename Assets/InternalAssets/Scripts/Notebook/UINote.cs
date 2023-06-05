@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UINote : MonoBehaviour
+namespace IceWasteland.Notebook
 {
-    [SerializeField] private Text UITextNoteTitle;
-    [SerializeField] private Text UITextNote;
-    [SerializeField] private Image UIIcon;
-
-    public void InitNote(NoteInfo noteInfo)
+    public class UINote : MonoBehaviour
     {
-        UITextNoteTitle.text = noteInfo.NoteTitle;
-        UITextNote.text = noteInfo.NoteText;
-        UIIcon.sprite = noteInfo.NoteIcon;
+        [SerializeField] private Text UITextNoteTitle;
+        [SerializeField] private Text UITextNote;
+        [SerializeField] private Image UIIcon;
+
+        public void InitNote(NoteInfo noteInfo)
+        {
+            UITextNoteTitle.text = noteInfo.NoteTitle;
+            UITextNote.text = noteInfo.NoteText;
+            UIIcon.sprite = noteInfo.NoteIcon;
+        }
     }
 }

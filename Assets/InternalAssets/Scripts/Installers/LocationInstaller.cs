@@ -51,7 +51,7 @@ public sealed class LocationInstaller : MonoInstaller
             .FromInstance(player)
             .AsSingle();
         Container
-            .Bind<PlayerTarget>()
+            .Bind<Target>()
             .FromInstance(player.Target)
             .AsSingle();
     }
