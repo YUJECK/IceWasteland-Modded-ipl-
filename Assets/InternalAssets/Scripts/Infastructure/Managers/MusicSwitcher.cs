@@ -1,40 +1,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicSwitcher : MonoBehaviour
+namespace IceWasteland.Helpers
 {
-    [System.Serializable] private class MusicTheme
+    public sealed class MusicSwitcher : MonoBehaviour
     {
-        [SerializeField] private KeyCode key = KeyCode.F1;
-        [SerializeField] private AudioClip theme;
-        public AudioClip Theme => theme;
-
-        public MusicTheme(KeyCode key) => this.key = key;
-
-        public bool Check()
+        [System.Serializable] private class MusicTheme
         {
-            if (Input.GetKeyDown(key))
-                return true;
-            
-            return false;
+            [SerializeField] private KeyCode key = KeyCode.F1;
+            [SerializeField] private AudioClip theme;
+            public AudioClip Theme => theme;
+
+            public MusicTheme(KeyCode key) => this.key = key;
+
+            public bool Check()
+            {
+                if (Input.GetKeyDown(key))
+                    return true;
+                
+                return false;
+            }
         }
-    }
 
-    [SerializeField] AudioSource themeSource;
-    [SerializeField] List<MusicTheme> musicThemes = new();
+        [SerializeField] AudioSource themeSource;
+        [SerializeField] List<MusicTheme> musicThemes = new();
 
-    private void Update()
-    {
-        foreach (MusicTheme nextTheme in musicThemes)
+        private void Update()
         {
-            if (nextTheme.Check())
-                SwitchTheme(nextTheme.Theme);
+            foreach (MusicTheme nextTheme in musicThemes)
+            {
+                if (nextTheme.Check())
+                    SwitchTheme(nextTheme.Theme);
+            }
         }
-    }
-    
-    private void SwitchTheme(AudioClip newTheme)
-    {
-        themeSource.clip = newTheme;
-        themeSource.Play();
+        
+        private void SwitchTheme(AudioClip newTheme)
+        {
+            themeSource.clip = newTheme;
+            themeSource.Play();
+        }
     }
 }

@@ -5,57 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0efc2395-6483-466b-8ccc-4749df198065" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/AICore/Target.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/AICore/Target.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Helpers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Helpers/RandomPositionGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Helpers/RandomPositionGenerator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/Shop.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ice Wasteland/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ice Wasteland/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Resources/HUD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Resources/HUD.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Resources/Note.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Resources/Note.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/AICore/TargetLocator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/AICore/TargetLocator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/GameManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MagazineWorkest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MagazineWorkest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/Shop.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/ManagerInvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/ManagerInvent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MenuManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MenuManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MusicSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MusicSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/SoldManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/SoldManager.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Installers/LocationInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Installers/LocationInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/MVC_UI/ISwitchable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/ISwitchable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/MVC_UI/ISwitchable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/ISwitchable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/Boiler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/Boiler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/Directs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/Directs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/Directs.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/Directs.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/GameManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/MagazineWorkest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MagazineWorkest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/MagazineWorkest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MagazineWorkest.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/ManagerInvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/ManagerInvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/ManagerInvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/ManagerInvent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/MenuManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MenuManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/MusicSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MusicSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/MusicSwitcher.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MusicSwitcher.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/RecycleMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/RecycleMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/RecycleMachine.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/RecycleMachine.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/SaleMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/SaleMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/SaleMachine.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/SaleMachine.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/SoldManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/SoldManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/SoldManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/SoldManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/TagHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/TagHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Managers/TagHelper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/TagHelper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/NoteInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/NoteInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Notebook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Notebook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/UINote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/UINote.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/Bee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/Bee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/GerySheet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/GerySheet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/GerySheet.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/GerySheet.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/LutingPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/LutingPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/LutingPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/LutingPlayer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/PlayerDeathEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/PlayerDeathEffects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/PlayerDeathEffects.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/PlayerDeathEffects.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/PlayerFlipper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/PlayerFlipper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/PlayerFlipper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/PlayerFlipper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/PlayerMovable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/PlayerMovable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/PlayerMovable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/PlayerMovable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/PlayerProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/PlayerProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Player/PlayerProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/PlayerProvider.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Spawners/BeeFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Spawners/BeeFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/EnemyAI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/EnemyAI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/FoxAI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/FoxAI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/HPEnemy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/HPEnemy.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/HobaAI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/HobaAI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Spawners/BerrySpawner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Spawners/BerrySpawner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/PackageSpeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/PackageSpeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/GerySheet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/GerySheet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/LutingPlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/LutingPlayer.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +129,7 @@
       <workItem from="1684750380798" duration="1254000" />
       <workItem from="1684755223641" duration="450000" />
       <workItem from="1685952701907" duration="2128000" />
+      <workItem from="1686035949503" duration="4114000" />
     </task>
     <servers />
   </component>

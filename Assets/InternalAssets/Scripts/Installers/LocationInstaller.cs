@@ -69,4 +69,9 @@ public sealed class LocationInstaller : MonoInstaller
         InventoryView inventoryView = new();
         Container.Inject(inventoryView);
     }
+
+    private void BindNotebook()
+    {
+        
+    }
 }

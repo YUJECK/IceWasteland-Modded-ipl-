@@ -10,10 +10,13 @@ namespace IceWasteland.Notebook
 
         public void PushNote(NoteInfo newNote)
         {
-            var newNotePosition = new Vector3(notes[notes.Count].transform.position.x, notes[notes.Count].transform.position.y+1, 0f);
+            var newNotePosition = new Vector3(notes[notes.Count-1].transform.position.x, notes[notes.Count-1].transform.position.y-80, 0f);
             var newNoteUI = Instantiate(notePrefab, newNotePosition, Quaternion.identity, transform);
+            notes.Add(newNoteUI);
             
             newNoteUI.InitNote(newNote);
         }
+        public void SetActive()
+            => gameObject.SetActive(!gameObject.activeSelf);
     }
 }
