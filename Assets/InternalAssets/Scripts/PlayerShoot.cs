@@ -9,13 +9,13 @@ namespace IceWasteland.Player
         [SerializeField] private GameObject bullet;
         [SerializeField] private Transform firePoint;
 
-        private IInputService inputService;
+        private IInputService _inputService;
 
         [Inject]
         private void Construct(IInputService inputService)
         {
-            this.inputService = inputService;
-            this.inputService.OnShootKeyDown += Shoot;
+            this._inputService = inputService;
+            this._inputService.OnShootKeyDown += Shoot;
         }
 
         private void Shoot() => Instantiate(bullet, firePoint.position, firePoint.rotation);

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1593572604990422579}
   - component: {fileID: 1593572604990422732}
+  - component: {fileID: 4012405516370510288}
   m_Layer: 0
   m_Name: Magazine
   m_TagString: Magas
@@ -59,6 +60,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5970538, y: 1.7890301}
   m_EdgeRadius: 0
+--- !u!114 &4012405516370510288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593572604990422733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e08c5a53451ce49a8da2a159497655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopUI: {fileID: 0}
+  items:
+    _serializedList:
+    - Key: item1
+      Value:
+        _prefab: {fileID: 3111075492428806386, guid: eb2223fd5dcc7694883c3dbb87cbc119, type: 3}
+    - Key: 
+      Value:
+        _prefab: {fileID: 0}
 --- !u!1 &1593572605441731914
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +187,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6601640446270393099
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,42 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0efc2395-6483-466b-8ccc-4749df198065" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Helpers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Helpers/RandomPositionGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Helpers/RandomPositionGenerator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/Shop.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/TradeItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/TradeItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/TradeItemSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/TradeItemSpawner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Stations.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Stations/Items.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Stations/Items/SpeedUp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Stations/Items/SpeedUp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Stations/Shop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ice Wasteland/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ice Wasteland/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ice Wasteland/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ice Wasteland/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Resources/HUD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Resources/HUD.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Resources/Note.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Resources/Note.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/GameManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MagazineWorkest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MagazineWorkest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/Shop.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/ManagerInvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/ManagerInvent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MenuManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MenuManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MusicSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/MusicSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/SoldManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/SoldManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/Machines/Magazine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/Machines/Magazine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/AssetsPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Helpers/AssetsPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/AssetsPath.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Helpers/AssetsPath.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/Shop.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Infastructure/Managers/Shop.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Stations/Shop.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Installers/LocationInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Installers/LocationInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Notebook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Notebook/Notebook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/EnemyAI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/EnemyAI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/FoxAI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/FoxAI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/HPEnemy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/HPEnemy.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/HobaAI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/MobsScripts/HobaAI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Spawners/BerrySpawner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Spawners/BerrySpawner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/PackageSpeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/PackageSpeed.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/GerySheet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/GerySheet.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/LutingPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/LutingPlayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Spawners/BeeFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/Spawners/BeeFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/PlayerShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/PlayerShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/BigPack_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/BigPack_sprite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/Gun_mgs_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/Gun_mgs_sprite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/Id_magazine_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/Id_magazine_sprite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/IsSold_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/IsSold_sprite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/NormalPack_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/NormalPack_sprite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/RandomPet_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/RandomPet_sprite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/UpSpeed_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/UpSpeed_sprite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/Upradiation_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/Upradiation_sprite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/treker_Magazine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Sprites/Standart/treker_Magazine.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +57,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Other/DestroyersGm/TemporaryObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2Q90CH2158f9NsIO7Lr2O9hCSSU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -129,7 +133,8 @@
       <workItem from="1684750380798" duration="1254000" />
       <workItem from="1684755223641" duration="450000" />
       <workItem from="1685952701907" duration="2128000" />
-      <workItem from="1686035949503" duration="4114000" />
+      <workItem from="1686035949503" duration="5119000" />
+      <workItem from="1686153019184" duration="3186000" />
     </task>
     <servers />
   </component>

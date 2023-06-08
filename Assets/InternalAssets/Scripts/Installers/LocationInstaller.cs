@@ -41,7 +41,7 @@ public sealed class LocationInstaller : MonoInstaller
 
     private void BindPlayer()
     {
-        Object playerPrefab = Resources.Load(AssetsPath.PLAYER);
+        Object playerPrefab = Resources.Load(AssetsPath.Player);
 
         PlayerProvider player = Container
             .InstantiatePrefabForComponent<PlayerProvider>(playerPrefab, startPoint.position, Quaternion.identity, null);

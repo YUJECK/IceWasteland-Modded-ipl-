@@ -27,7 +27,7 @@ namespace IceWasteland.Spawners
 
         private void LoadBeePrefab()
         {
-            _beePrefab = Resources.Load<Bee>(AssetsPath.BEE);
+            _beePrefab = Resources.Load<Bee>(AssetsPath.Bee);
         }
         private IEnumerator Spawning()
         {
